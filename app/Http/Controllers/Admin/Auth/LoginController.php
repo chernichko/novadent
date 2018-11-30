@@ -55,6 +55,11 @@ class LoginController extends Controller
         return $this->sendFailedLoginResponse($request);
     }
 
+    public function showLoginForm()
+    {
+        return view('admin.auth.login');
+    }
+
 
     /**
      * Where to redirect users after login.

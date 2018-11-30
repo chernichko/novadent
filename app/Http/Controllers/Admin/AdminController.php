@@ -157,4 +157,9 @@ class AdminController extends Controller
 
         return redirect()->route('admin.pages');
     }
+
+    public function prices()
+    {
+        return view('admin.prices');
+    }
 }

@@ -10,10 +10,10 @@
                 <label for="inputName">Название</label>
                 <input type="text" name="name" value="{{$data['name']}}" class="form-control" id="inputName">
             </div>
-            <div class="form-group">
-                <label for="inputFile">Логотип</label>
-                <input type="file" name="logotip" value="{{$data['name']}}" class="form-control" id="inputFile">
-            </div>
+            {{--<div class="form-group">--}}
+                {{--<label for="inputFile">Логотип</label>--}}
+                {{--<input type="file" name="logotip" value="{{$data['name']}}" class="form-control" id="inputFile">--}}
+            {{--</div>--}}
             <div class="form-group">
                 <label for="inputPhone">Номер телефона</label>
                 {{--<input type="text" name="phone" value="{{$data['phone']}}" class="form-control" id="inputPhone">--}}

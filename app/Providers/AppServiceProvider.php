@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use View;
 use Illuminate\Support\ServiceProvider;
+use App\SiteInfo;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $data = SiteInfo::get();
+
+        $info = [];
+
+        foreach ($data->toArray() as $item){
+            $info[$item['code']] = $item['value'];
+        }
+
+        View::share('info', $info);
     }
 
     /**

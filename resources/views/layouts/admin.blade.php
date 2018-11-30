@@ -75,7 +75,8 @@
             <div class="leftMenu float-left w-25">
                 <ul class="list-group">
                     <li class="list-group-item"><a href="{{route('admin.info')}}">Данные компании</a></li>
-                    <li class="list-group-item"><a href="{{route('admin.services')}}">Услуги и цены</a></li>
+                    <li class="list-group-item"><a href="{{route('admin.services')}}">Услуги</a></li>
+                    <li class="list-group-item"><a href="{{route('admin.prices')}}">Цены</a></li>
                     <li class="list-group-item"><a href="{{route('admin.news')}}">Новости</a></li>
                     <li class="list-group-item"><a href="{{route('admin.pages')}}">Текстовые страницы</a></li>
                     <li class="list-group-item"><a href="{{route('admin.doctors')}}">Врачи</a></li>

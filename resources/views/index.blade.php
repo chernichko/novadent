@@ -19,17 +19,7 @@
                 <a href="#" py-2>Подробнее...</a>
         </div>
         <div class="col-lg-6">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
+            <img src="{{URL::asset('/storage/novadent.jpg')}}" width="100%">
         </div>
     </div>
 </div>

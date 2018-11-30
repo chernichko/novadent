@@ -17,6 +17,12 @@ h3{
   padding: 20px 0;
 }
 
+.header_logo{
+  img {
+    width:150px;
+  }
+}
+
 .header_feedback{line-height:70px;}
 .header_feedback_modal{
   background: #fff;
@@ -101,6 +107,16 @@ h3{
   }
 }
 
+.advantages {
+
+  .advantages_item {
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid #ececec;
+  }
+
+}
+
 .form_make_appointment{
   margin: 0 auto;
   width:350px;
@@ -120,6 +136,12 @@ h3{
   font-weight:bold;
 }
 
+.footer_logo{
+  img {
+    width:150px;
+  }
+}
+
 .footer_menu{
   list-style: none;
   padding:0;
@@ -131,4 +153,37 @@ h3{
 
 .footer_menu_link:hover{
   color:#fff;
+}
+
+.footer_phone{
+  color:#fff;
+  text-align: right;
+
+  .footer_phone_main{
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  .footer_phone_dop{
+    font-size:16px;
+  }
+
+  .footer_messangers{
+    .messanger_tm,
+    .messanger_vb,
+    .messanger_wp,
+    .messanger_ig{
+      border: 1px solid;
+      width: 30px;
+      height: 30px;
+      float: right;
+      margin: 1px;
+      background: url('/files/messangers.png') no-repeat;
+    }
+
+    .messanger_tm{
+      background-position: 0 0;
+    }
+
+  }
 }

@@ -19,13 +19,27 @@ Auth::routes();
 Route::get('/', 'MainController@index')->name('main');
 
 //Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/about-us', 'MainController@about')->name('about');
+Route::get('/news', 'MainController@news')->name('news');
+Route::get('/services', 'MainController@services')->name('services');
+Route::get('/contacts', 'MainController@contacts')->name('contacts');
+
+//Route::group(['prefix' => 'admin','namespace' => 'Admin'], function () {
+//    // Маршруты аутентификации...
+//    Route::get('/login', 'Auth\LoginController@showLoginForm');
+//    Route::post('/login', 'Auth\LoginController@login');
+//    Route::get('/logout', 'Auth\LoginController@logout');
+//
+//    // Маршруты регистрации...
+////    Route::get('/register', 'Auth\AuthController@getRegister');
+////    Route::post('/register', 'Auth\AuthController@postRegister');
+//});
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin', 'middleware' => ['auth','checkAdmin']], function () {
 
     Route::get('/', 'AdminController@index')->name('admin');
     Route::get('/info', 'AdminController@info')->name('admin.info');
     Route::post('/info', 'AdminController@info')->name('admin.info.post');
-
 
     Route::get('/news', 'AdminController@news')->name('admin.news');
 
@@ -35,6 +49,8 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin', 'middleware' => ['auth
     Route::get('/services/edit/{id}', 'AdminController@serviceEdit');
     Route::post('/services/edit/{id}', 'AdminController@serviceEdit');
     Route::get('/services/delete/{id}', 'AdminController@serviceDelete');
+
+    Route::get('/prices', 'AdminController@prices')->name('admin.prices');
 
     Route::get('/pages', 'AdminController@pages')->name('admin.pages');
     Route::get('/pages/create', 'AdminController@pageCreate')->name('admin.pages.create');
