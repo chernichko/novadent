@@ -1,5 +1,10 @@
 @extends('layouts.admin')
 
+@section('title')
+    <li class="breadcrumb-item"><a href="{{route('admin.services')}}">Услуги</a></li>
+    <li class="breadcrumb-item active">Добавить услугу</li>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

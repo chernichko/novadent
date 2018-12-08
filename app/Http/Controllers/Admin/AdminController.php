@@ -35,17 +35,17 @@ class AdminController extends Controller
     {
         if($request->isMethod('post')){
 
-            $file = $request->file('logotip');
-            $upload_folder = 'public/files';
-            $filename = $file->getClientOriginalName(); // image.jpg
+//            $file = $request->file('logotip');
+//            $upload_folder = 'public/files';
+//            $filename = $file->getClientOriginalName(); // image.jpg
 
-            Storage::putFileAs($upload_folder, $file, $filename);
+//            Storage::putFileAs($upload_folder, $file, $filename);
 
 //            $path = $request->file('logotip')->storeAs('files', 'logotip');
 
 //            dd($path);
 
-//            SiteInfo::saveInfo($request->all());
+            SiteInfo::saveInfo($request->all());
 
 //            foreach ($request->files as $file) {
 //                $filename = $photo->store('photos');

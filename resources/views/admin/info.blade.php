@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@section('title')
+    Информация о компании
+@endsection
+
 @section('content')
 <div class="container w-75 float-left px-5">
     {{--<div class="row justify-content-center">--}}

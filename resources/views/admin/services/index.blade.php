@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@section('title')
+    <li class="breadcrumb-item active">Услуги</li>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
