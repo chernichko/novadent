@@ -7,3 +7,19 @@
 @import "cards.scss";
 @import "login.scss";
 @import "footer.scss";
+
+
+.add-service-price{
+  cursor: pointer;
+  font-size: 14px;
+  color: #007bff;
+}
+
+.add-service-price:hover{
+  text-decoration: underline;
+}
+
+.news_form .error,
+.services_form .error{
+  border: 1px solid red;
+}

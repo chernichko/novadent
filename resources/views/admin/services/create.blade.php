@@ -1,5 +1,11 @@
 @extends('layouts.admin')
 
+@section('scripts')
+    <script>
+        CKEDITOR.replace( 'serviceDescription' );
+    </script>
+@endsection
+
 @section('title')
     <li class="breadcrumb-item"><a href="{{route('admin.services')}}">Услуги</a></li>
     <li class="breadcrumb-item active">Добавить услугу</li>
@@ -10,7 +16,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-            <form action="{{route('admin.service.create')}}" method="post">
+            <form action="{{route('admin.service.create')}}" method="post" class="services_form">
                 {{ csrf_field() }}
                 <input type="hidden" name="id" class="form-control" id="serviceId">
                 <div class="form-group">
@@ -34,7 +40,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-success">Сохранить</button>
+                    <button type="button" class="btn btn-success">Сохранить</button>
                 </div>
             </form>
 

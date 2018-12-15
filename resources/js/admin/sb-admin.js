@@ -1,4 +1,5 @@
 require('../bootstrap');
+require('./scripts');
 
 (function($) {
   "use strict"; // Start of use strict

@@ -42,6 +42,11 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin', 'middleware' => ['auth
     Route::post('/info', 'AdminController@info')->name('admin.info.post');
 
     Route::get('/news', 'AdminController@news')->name('admin.news');
+    Route::get('/news/create', 'AdminController@newsCreate')->name('admin.news.create');
+    Route::post('/news/create', 'AdminController@newsCreate')->name('admin.news.create.post');
+    Route::get('/news/edit/{id}', 'AdminController@newsEdit');
+    Route::post('/news/edit/{id}', 'AdminController@newsEdit');
+    Route::get('/news/delete/{id}', 'AdminController@newsDelete');
 
     Route::get('/services', 'AdminController@services')->name('admin.services');
     Route::get('/services/create', 'AdminController@serviceCreate')->name('admin.service.create');
@@ -51,6 +56,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin', 'middleware' => ['auth
     Route::get('/services/delete/{id}', 'AdminController@serviceDelete');
 
     Route::get('/prices', 'AdminController@prices')->name('admin.prices');
+    Route::post('/prices', 'AdminController@prices')->name('admin.prices.post');
 
     Route::get('/pages', 'AdminController@pages')->name('admin.pages');
     Route::get('/pages/create', 'AdminController@pageCreate')->name('admin.pages.create');
@@ -62,5 +68,6 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin', 'middleware' => ['auth
     Route::get('/doctors', 'AdminController@doctors')->name('admin.doctors');
     Route::get('/gallery', 'AdminController@gallery')->name('admin.gallery');
     Route::get('/feedback', 'AdminController@feedback')->name('admin.feedback');
+    Route::get('/licenses', 'AdminController@licenses')->name('admin.licenses');
 
 });

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Информация о компании
+    <li class="breadcrumb-item active">Информация о компании</li>
 @endsection
 
 @section('content')

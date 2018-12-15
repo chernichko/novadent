@@ -1,0 +1,102 @@
+
+$(".add-price-js").on('click', function(){
+
+    var id_serv = $(this).data('id');
+    var block = $("#service_"+id_serv).find('.prices-block');
+    var row = block.find('.row').first();
+
+    row.clone().find("input").val("").end().appendTo(block);
+})
+
+$(".save-price-js").on('click', function(){
+
+    var id_serv = $(this).data('id');
+    var block = $("#service_"+id_serv).find('.prices-block');
+
+    var rows = block.find('.row');
+
+    var arr_prices = [];
+
+    rows.each(function (index, value){
+        var tmp = {};
+
+        tmp.name = $(this).find('input[name=name]').val();
+        tmp.price = $(this).find('input[name=price]').val();
+        tmp.id = $(this).find('input[name=service_id]').val();
+
+        arr_prices.push(tmp);
+    });
+
+
+    arr_prices = JSON.stringify(arr_prices);
+
+    console.log(arr_prices);
+
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+
+    $.ajax({
+        url: '/admin/prices',
+        type: "POST",
+        data: {data: arr_prices,
+               service: id_serv,
+               _token: CSRF_TOKEN},
+        success: function (data) {
+            console.log(data);
+        },
+    });
+
+})
+
+$('.news_form button').on('click', function(){
+
+    var error = true;
+
+    $('.news_form input').removeClass('error');
+
+    if( !$('.news_form #newsName').val() ){
+        $('.news_form #newsName').addClass('error');
+        error = false;
+    }
+
+    if( !$('.news_form #newsCode').val() ){
+        $('.news_form #newsCode').addClass('error');
+        error = false;
+    }
+
+    // if( !$('.news_form #newsDescription').val() ){
+    //     $('.news_form #newsDescription').addClass('error');
+    //     error = false;
+    // }
+
+    if(error){
+        $('.news_form').submit();
+    }
+
+})
+
+$('.services_form button').on('click', function(){
+
+    var error = true;
+
+    $('.services_form input').removeClass('error');
+
+    if( !$('.services_form #serviceName').val() ){
+        $('.services_form #serviceName').addClass('error');
+        error = false;
+    }
+
+    if( !$('.services_form #serviceCode').val() ){
+        $('.services_form #serviceCode').addClass('error');
+        error = false;
+    }
+
+    // if( !$('.news_form #newsDescription').val() ){
+    //     $('.news_form #newsDescription').addClass('error');
+    //     error = false;
+    // }
+
+    if(error){
+        $('.services_form').submit();
+    }
+
+})

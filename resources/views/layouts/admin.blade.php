@@ -9,7 +9,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>SB Admin - Dashboard</title>
+
 
     <!-- Bootstrap core CSS-->
     {{--<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">--}}
@@ -88,12 +92,6 @@
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="index.html">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span>
-            </a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link" href="{{route('admin.info')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Данные компании</span>
@@ -124,8 +122,8 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                 <h6 class="dropdown-header">Основные страницы</h6>
-                <a class="dropdown-item" href="login.html">О нас</a>
-                <a class="dropdown-item" href="register.html">Пользовательское соглашение</a>
+                <a class="dropdown-item" href="/admin/pages/edit/2">О нас</a>
+                <a class="dropdown-item" href="/admin/pages/edit/3">Пользовательское соглашение</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Другие страницы</h6>
                 <a class="dropdown-item" href="404.html">404 Page</a>
@@ -143,7 +141,7 @@
                 <span>Галлерея</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.gallery')}}">
+            <a class="nav-link" href="{{route('admin.licenses')}}">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Лицензии</span></a>
         </li>
@@ -161,7 +159,7 @@
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="#">Dashboard</a>
+                    Администратор
                 </li>
                 @yield('title')
             </ol>
@@ -225,6 +223,10 @@
 
 <!-- Custom scripts for all pages-->
 <script src="{{ asset('js/admin/sb-admin.js') }}"></script>
+
+<script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+
+@yield('scripts')
 
 <!-- Demo scripts for this page
 <script src="js/demo/datatables-demo.js"></script>

@@ -6,7 +6,10 @@ use App\Http\Controllers\Controller;
 use App\ServiceGroups;
 use App\SiteInfo;
 use App\TextPages;
+use App\News;
+use App\Prices;
 use Illuminate\Http\Request;
+use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
@@ -46,20 +49,6 @@ class AdminController extends Controller
 //            dd($path);
 
             SiteInfo::saveInfo($request->all());
-
-//            foreach ($request->files as $file) {
-//                $filename = $photo->store('photos');
-//                ProductsPhoto::create([
-//                    'product_id' => $product->id,
-//                    'filename' => $filename
-//                ]);
-
-//                if(move_uploaded_file())
-
-//                dd($file);
-
-//            }
-
         }
 
         $data = SiteInfo::all();
@@ -73,8 +62,43 @@ class AdminController extends Controller
     }
     public function news()
     {
-        return view('admin.news');
+        $list_news = News::all();
+        return view('admin.news.index',['listnews'=>$list_news]);
     }
+
+    public function newsCreate(Request $request)
+    {
+        if($request->isMethod('post')) {
+
+            News::saveNews($request);
+
+            return redirect()->route('admin.news');
+        }
+
+        return view('admin.news.create');
+    }
+
+    public function newsDelete($id)
+    {
+        $new = News::find($id);
+
+        $new->delete();
+
+        return redirect()->route('admin.news');
+    }
+
+    public function newsEdit(Request $request,$id)
+    {
+        if($request->isMethod('post')) {
+
+            News::saveNews($request);
+        }
+
+        $new = News::where(['id'=>$id])->first();
+
+        return view('admin.news.edit',['new'=>$new]);
+    }
+
     public function services()
     {
         $list_service = ServiceGroups::all();
@@ -158,8 +182,50 @@ class AdminController extends Controller
         return redirect()->route('admin.pages');
     }
 
-    public function prices()
+    public function prices(Request $request)
     {
-        return view('admin.prices');
+        if($request->isMethod('post')) {
+
+            $post = $request->all();
+
+            $pod_services = \GuzzleHttp\json_decode($post['data']);
+
+            foreach ($pod_services as $item){
+
+                Prices::savePrice($item,$post['service']);
+            }
+
+            return 0;
+        }
+
+        $list_service = ServiceGroups::all();
+
+        $prices = [];
+
+        foreach ($list_service as $group){
+
+            $prices_tmp = Prices::where(['service_group_id' => $group['id']])->get();
+            $prices[$group['id']] = $prices_tmp;
+        }
+
+        return view('admin.prices',['services'=>$list_service, 'price'=>$prices]);
     }
+
+    public function doctors(){
+        return view('admin.doctors');
+    }
+
+    public function gallery(){
+        return view('admin.gallery');
+    }
+
+    public function licenses(){
+        return view('admin.licenses');
+    }
+
+    public function feedback(){
+        return view('admin.feedback');
+    }
+
+
 }
