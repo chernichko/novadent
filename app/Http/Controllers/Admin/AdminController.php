@@ -191,11 +191,13 @@ class AdminController extends Controller
             $pod_services = \GuzzleHttp\json_decode($post['data']);
 
             foreach ($pod_services as $item){
-
-                Prices::savePrice($item,$post['service']);
+                if(!empty($item->name) && !empty($item->price))
+                    Prices::savePrice($item,$post['service']);
+                else
+                    Prices::deletePrice($item->id);
             }
 
-            return 0;
+            return redirect()->route('admin.prices');
         }
 
         $list_service = ServiceGroups::all();

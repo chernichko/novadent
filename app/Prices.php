@@ -28,4 +28,12 @@ class Prices extends Model
 
         $price->save();
     }
+
+    public static function deletePrice($id){
+
+        $price = Prices::find($id);
+        if ($price != null)
+            $price->delete();
+
+    }
 }
