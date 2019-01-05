@@ -79,24 +79,34 @@ h3{
   font-size:16px;
 }
 
-.header_messangers{
+//.header_messangers{
   .messanger_tm,
   .messanger_vb,
   .messanger_wp,
   .messanger_ig{
-    border: 1px solid;
+    //border: 1px solid;
     width: 30px;
     height: 30px;
     float: right;
     margin: 1px;
     background: url('/files/messangers.png') no-repeat;
+    background-size: cover;
   }
 
   .messanger_tm{
-    background-position: 0 0;
+    background-position-x:-43px;
+  }
+  .messanger_vb{
+    background-position-x:-129px;
+  }
+  .messanger_wp{
+    background-position-x:-216px;
+  }
+  .messanger_ig{
+    background-position-x:-259px;
   }
 
-}
+//}
 
 .main_menu{
   background: #ff8a3d;
@@ -168,22 +178,22 @@ h3{
     font-size:16px;
   }
 
-  .footer_messangers{
-    .messanger_tm,
-    .messanger_vb,
-    .messanger_wp,
-    .messanger_ig{
-      border: 1px solid;
-      width: 30px;
-      height: 30px;
-      float: right;
-      margin: 1px;
-      background: url('/files/messangers.png') no-repeat;
-    }
+  //.footer_messangers{
+  //  .messanger_tm,
+  //  .messanger_vb,
+  //  .messanger_wp,
+  //  .messanger_ig{
+  //    border: 1px solid;
+  //    width: 30px;
+  //    height: 30px;
+  //    float: right;
+  //    margin: 1px;
+  //    background: url('/files/messangers.png') no-repeat;
+  //  }
+  //
+  //  .messanger_tm{
+  //    background-position: 0 0;
+  //  }
 
-    .messanger_tm{
-      background-position: 0 0;
-    }
-
-  }
+  //}
 }
