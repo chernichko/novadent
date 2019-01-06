@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-            <a href="{{route('admin.pages.create')}}" class="btn btn-info">Добавить Страницу</a>
+            <a href="{{route('admin.pages.create')}}" class="btn btn-info mb-3">Добавить Страницу</a>
 
 
             <ul class="list-group">

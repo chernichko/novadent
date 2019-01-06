@@ -20,7 +20,10 @@
 
                 <div class="form-group">
                     <label for="serviceCode">Код</label>
-                    <input type="text" name="code" value="{{$page->code}}" class="form-control" id="serviceCode">
+                    <input type="text" name="code" value="{{$page->code}}" class="form-control" id="serviceCode" @php ($page->main) ? print 'disabled' : '' @endphp >
+                    @if($page->main)
+                        <input type="hidden" name="code" value="{{$page->code}}">
+                    @endif
                 </div>
 
                 <div class="form-group">
@@ -35,8 +38,9 @@
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-success">Сохранить</button>
-
+                    @if(!$page->main)
                     <a href="/admin/pages/delete/{{$page->id}}" class="btn btn-danger">Удалить</a>
+                    @endif
                 </div>
             </form>
 

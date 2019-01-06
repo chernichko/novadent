@@ -1,4 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import "variables.scss";
 @import "mixins.scss";
 @import "global.scss";
@@ -7,7 +8,6 @@
 @import "cards.scss";
 @import "login.scss";
 @import "footer.scss";
-
 
 .add-service-price{
   cursor: pointer;
@@ -22,4 +22,13 @@
 .news_form .error,
 .services_form .error{
   border: 1px solid red;
+}
+
+.add-new-doctor{
+  cursor: pointer;
+  color:#007bff;
+
+  &:hover{
+    text-decoration: underline;
+  }
 }

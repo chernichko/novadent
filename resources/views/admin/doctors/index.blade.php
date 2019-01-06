@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    <li class="breadcrumb-item active">Услуги</li>
+    <li class="breadcrumb-item active">Врачи</li>
 @endsection
 
 @section('content')
@@ -9,15 +9,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-            <a href="{{route('admin.service.create')}}" class="btn btn-info mb-3">Добавить услугy</a>
+            <a href="{{route('admin.doctor.create')}}" class="btn btn-info mb-3">Добавить врача</a>
 
             <ul class="list-group">
-                @foreach($listService as $item)
+                @foreach($listDoctors as $item)
                     <li class="list-group-item">
-                        <a href="/admin/services/edit/{{$item->id}}"> {{$item->name}}</a>
+                        <a href="/admin/doctors/edit/{{$item->id}}"> {{$item->name}}</a>
                     </li>
                 @endforeach
             </ul>
+
         </div>
     </div>
 </div>

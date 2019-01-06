@@ -8,6 +8,7 @@ use App\SiteInfo;
 use App\TextPages;
 use App\News;
 use App\Prices;
+use App\Doctors;
 use Illuminate\Http\Request;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
@@ -196,8 +197,6 @@ class AdminController extends Controller
                 else
                     Prices::deletePrice($item->id);
             }
-
-            return redirect()->route('admin.prices');
         }
 
         $list_service = ServiceGroups::all();
@@ -214,7 +213,33 @@ class AdminController extends Controller
     }
 
     public function doctors(){
-        return view('admin.doctors');
+        $list_doctors = Doctors::all();
+        return view('admin.doctors.index',['listDoctors'=>$list_doctors]);
+    }
+
+    public function doctorCreate(Request $request)
+    {
+        if($request->isMethod('post')) {
+
+            Doctors::saveDoctor($request);
+
+            return redirect()->route('admin.doctors');
+        }
+
+        return view('admin.doctors.create');
+    }
+
+    public function doctorEdit(Request $request,$id)
+    {
+        if($request->isMethod('post')) {
+
+            Doctors::saveDoctor($request);
+
+        }
+
+        $doctor = Doctors::where(['id'=>$id])->first();
+
+        return view('admin.doctors.edit',['doctor'=>$doctor]);
     }
 
     public function gallery(){

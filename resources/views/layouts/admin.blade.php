@@ -19,7 +19,7 @@
     {{--<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">--}}
 
     <!-- Custom fonts for this template-->
-    {{--<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">--}}
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
     <!-- Page level plugin CSS-->
     {{--<link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">--}}
@@ -122,11 +122,15 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                 <h6 class="dropdown-header">Основные страницы</h6>
-                <a class="dropdown-item" href="/admin/pages/edit/2">О нас</a>
-                <a class="dropdown-item" href="/admin/pages/edit/3">Пользовательское соглашение</a>
+                @foreach($pages['main'] as $page)
+                    <a class="dropdown-item" href="/admin/pages/edit/{{$page['id']}}">{{$page['name']}}</a>
+                @endforeach
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Другие страницы</h6>
-                <a class="dropdown-item" href="404.html">404 Page</a>
+                @foreach($pages['other'] as $page)
+                    <a class="dropdown-item" href="/admin/pages/edit/{{$page['id']}}">{{$page['name']}}</a>
+                @endforeach
+
                 <a class="dropdown-item" href="{{route('admin.pages.create')}}">Добавить</a>
             </div>
         </li>
@@ -171,13 +175,13 @@
         <!-- /.container-fluid -->
 
         <!-- Sticky Footer -->
-        <footer class="sticky-footer">
+        <!--footer class="sticky-footer">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
                     <span>Copyright © Your Website 2018</span>
                 </div>
             </div>
-        </footer>
+        </footer -->
 
     </div>
     <!-- /.content-wrapper -->
@@ -214,12 +218,12 @@
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+{{--<script src="vendor/jquery-easing/jquery.easing.min.js"></script>--}}
 
 <!-- Page level plugin JavaScript-->
-<script src="{{ asset('./node_modules/chart.js/dist/Chart.min.js') }}"></script>
-<script src="vendor/datatables/jquery.dataTables.js"></script>
-<script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+{{--<script src="{{ asset('./node_modules/chart.js/dist/Chart.min.js') }}"></script>--}}
+{{--<script src="vendor/datatables/jquery.dataTables.js"></script>--}}
+{{--<script src="vendor/datatables/dataTables.bootstrap4.js"></script>--}}
 
 <!-- Custom scripts for all pages-->
 <script src="{{ asset('js/admin/sb-admin.js') }}"></script>

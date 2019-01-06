@@ -45,10 +45,10 @@
                         {{$info['phone1']}}
                     </div>
                     <div class="header_messangers">
-                        <div class="messanger_tm"></div>
-                        <div class="messanger_vb"></div>
-                        <div class="messanger_wp"></div>
-                        <div class="messanger_ig"></div>
+                        <a href="https://www.instagram.com/novadent_vlg/" rel="nofollow"><span class="messanger_tm"></span></a>
+                        <span class="messanger_vb"></span>
+                        <span class="messanger_wp"></span>
+                        <span class="messanger_ig"></span>
                     </div>
                 </div>
             </div>
@@ -118,10 +118,10 @@
                             {{$info['phone1']}}
                         </div>
                         <div class="footer_messangers">
-                            <div class="messanger_tm"></div>
-                            <div class="messanger_vb"></div>
-                            <div class="messanger_wp"></div>
-                            <div class="messanger_ig"></div>
+                            <span class="messanger_tm"></span>
+                            <span class="messanger_vb"></span>
+                            <span class="messanger_wp"></span>
+                            <span class="messanger_ig"></span>
                         </div>
                     </div>
                 </div>

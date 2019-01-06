@@ -41,7 +41,8 @@ $(".save-price-js").on('click', function(){
                service: id_serv,
                _token: CSRF_TOKEN},
         success: function (data) {
-            console.log(data);
+            // console.log(data);
+            location.reload();
         },
     });
 
@@ -99,4 +100,33 @@ $('.services_form button').on('click', function(){
         $('.services_form').submit();
     }
 
+})
+
+$('.doctors_form button').on('click', function(){
+
+    var error = true;
+
+    $('.doctors_form input').removeClass('error');
+
+    if( !$('.doctors_form #nameDoctor').val() ){
+        $('.doctors_form #nameDoctor').addClass('error');
+        error = false;
+    }
+
+    if( !$('.doctors_form #specializationDoctor').val() ){
+        $('.doctors_form #specializationDoctor').addClass('error');
+        error = false;
+    }
+
+    if(error){
+        $('.doctors_form').submit();
+    }
+
+})
+
+$('.upload-lisences-btn').on('click', function(){
+    event.preventDefault();
+    var file_data = $('.add-lisences-form_input').prop('files');
+    var form_data = new FormData();
+    form_data.append('file', file_data);
 })
