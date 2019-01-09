@@ -15,8 +15,8 @@ class AdminServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $data_main = [];//TextPages::where(['main'=>1])->get()->all();
-        $data = [];//TextPages::where(['main', 0)->get()->all();
+        $data_main = TextPages::where(['main'=>1])->get()->all();
+        $data = TextPages::where(['main' => 0])->get()->all();
 
         $pages = ['main' => $data_main, 'other' => $data];
 
