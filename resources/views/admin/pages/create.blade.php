@@ -5,6 +5,12 @@
     <li class="breadcrumb-item active">Добавить страницу</li>
 @endsection
 
+@section('scripts')
+    <script>
+        CKEDITOR.replace( 'pageDescription' );
+    </script>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -12,25 +18,25 @@
 
             <form action="{{route('admin.pages.create')}}" method="post">
                 {{ csrf_field() }}
-                <input type="hidden" name="id" class="form-control" id="serviceId">
+                <input type="hidden" name="id" class="form-control" id="pageId">
                 <div class="form-group">
-                    <label for="serviceName">Название</label>
-                    <input type="text" name="name" class="form-control" id="serviceName">
+                    <label for="pageName">Название</label>
+                    <input type="text" name="name" class="form-control" id="pageName">
                 </div>
 
                 <div class="form-group">
-                    <label for="serviceCode">Код</label>
-                    <input type="text" name="code" class="form-control" id="serviceCode">
+                    <label for="pageCode">Код</label>
+                    <input type="text" name="code" class="form-control" id="pageCode">
                 </div>
 
                 <div class="form-group">
-                    <label for="serviceDescription">Описание</label>
-                    <textarea class="form-control" name="description" id="serviceDescription" rows="15"></textarea>
+                    <label for="pageDescription">Описание</label>
+                    <textarea class="form-control" name="description" id="pageDescription" rows="15"></textarea>
                 </div>
 
                 <div class="form-group form-check">
-                    <input type="checkbox" value="1" name="active" class="form-check-input" id="serviceActive">
-                    <label class="form-check-label" for="serviceActive">Опубликовано</label>
+                    <input type="checkbox" value="1" name="active" class="form-check-input" id="pageActive">
+                    <label class="form-check-label" for="pageActive">Опубликовано</label>
                 </div>
 
                 <div class="form-group">

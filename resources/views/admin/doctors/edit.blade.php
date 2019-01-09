@@ -55,7 +55,7 @@
 
                 <div class="form-group">
                     <button type="button" class="btn btn-success">Сохранить</button>
-                    <a href="/admin/doctors/delete/{{$doctor->id}}" class="btn btn-danger">Удалить</a>
+                    <!--- <a href="/admin/doctors/delete/тут вывод ид" class="btn btn-danger">Удалить</a> --->
                 </div>
             </form>
 
