@@ -14,7 +14,7 @@ class AddMainColumTextPagesTable extends Migration
     public function up()
     {
         Schema::table('text_pages', function (Blueprint $table) {
-            $table->boolean('main')->after('description')->default(0);
+            $table->boolean('main')->after('description');
         });
     }
 
