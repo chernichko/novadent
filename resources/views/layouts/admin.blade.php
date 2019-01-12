@@ -93,19 +93,19 @@
     <ul class="sidebar navbar-nav">
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.info')}}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-fw fa-info"></i>
                 <span>Данные компании</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.services')}}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-fw fa-rocket"></i>
                 <span>Услуги</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.prices')}}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-fw fa-rub"></i>
                 <span>Цены</span>
             </a>
         </li>
@@ -136,22 +136,22 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.doctors')}}">
-                <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fas fa-fw fa-user-md"></i>
                 <span>Врачи</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.gallery')}}">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-fw fa-picture-o"></i>
                 <span>Галлерея</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.licenses')}}">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-fw fa-file-text-o"></i>
                 <span>Лицензии</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.feedback')}}">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-fw fa-comment-o"></i>
                 <span>Отзывы</span></a>
         </li>
     </ul>
