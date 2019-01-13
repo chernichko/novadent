@@ -31,6 +31,11 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="serviceShortDescription">Короткое описание (макс 250 символов)</label>
+                    <textarea class="form-control" name="shortdescription" id="serviceShortDescription" rows="3">{{$service->short_description}}</textarea>
+                </div>
+
+                <div class="form-group">
                     <label for="serviceDescription">Описание</label>
                     <textarea class="form-control" name="description" id="serviceDescription" rows="15">{{$service->description}}</textarea>
                 </div>

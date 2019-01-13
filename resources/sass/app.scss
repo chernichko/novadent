@@ -8,8 +8,32 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+//a{
+//  color:#ff8a3d;
+//  text-decoration: none;
+//
+//  &:hover{
+//    color:#ff8a3d;
+//    text-decoration:none;
+//    border-bottom:1px solid #ff8a3d;;
+//  }
+//}
+
 h3{
-  color: #ff8a3d;
+  //color: #ff8a3d;
+  color: #86cedb;
+  font-weight: bold;
+}
+
+.text-link{
+    color:#ff8a3d;
+    text-decoration: none;
+
+    &:hover{
+      color:#ff8a3d;
+      text-decoration:none;
+      border-bottom:1px solid #ff8a3d;;
+    }
 }
 
 #header{
@@ -40,9 +64,21 @@ h3{
 }
 .modal-dialog{margin-top:10em}
 
+.breadcrumb{
+  padding: 0.75em 0;
+  background: none;
+  margin:0;
+}
+
 .container{
   //border:1px solid #6E6E6E;
   height: 100%;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
 }
 
 .row{
@@ -73,6 +109,7 @@ h3{
 .header_phone_main{
   font-size: 35px;
   font-weight: bold;
+  line-height: 35px;
 }
 
 .header_phone_dop{
@@ -109,11 +146,29 @@ h3{
 //}
 
 .main_menu{
-  background: #ff8a3d;
+  background: #86cedb;
+  //background: #ff8a3d;
   font-size: 16px;
 
   a{
     color:#fff!important;
+
+    &:hover{
+      text-decoration: none;
+    }
+  }
+
+  a:first-child
+  {
+    padding-left:0!important;
+  }
+
+  .navbar-nav:first-child{
+    margin-left:0!important;
+  }
+
+  .navbar-nav .nav-link{
+    font-weight:700;
   }
 }
 

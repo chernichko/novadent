@@ -11,7 +11,7 @@ class News extends Model
 {
     protected $table = 'news';
 
-    protected $fillable = ['name','description','code','image','updated_at'];
+    protected $fillable = ['name','short_description','description','code','image','updated_at'];
 
     protected $hidden = ['created_at'];
 
@@ -49,8 +49,9 @@ class News extends Model
 
         if(isset($data['dltImg']))
             $new->image = '';
-
-        $new->description = $data['description'];
+//        $new = htmlspecialchars("<a href='test'>Test</a>", ENT_QUOTES);
+        $new->description = htmlspecialchars($data['description']);
+        $new->short_description = htmlspecialchars($data['short_description']);
         $new->active = isset($data['active']) ? 1 : 0 ;
 
         $new->save();

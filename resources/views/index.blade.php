@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
+@section('breadcrumbs')
+    <li class="breadcrumb-item">Главная</li>
+@endsection
+
 @section('content')
-<div class="container pt-4">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-6">
                 <h3>О нас</h3>
@@ -16,7 +20,7 @@
                     Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение нашей
                     деятельности представляет собой интересный эксперимент проверки систем массового участия.
                 </p>
-                <a href="#" py-2>Подробнее...</a>
+                <a href="#" py-2><a href="/about-us" class="text-link">Подробнее...</a>
         </div>
         <div class="col-lg-6">
             <img src="{{URL::asset('/storage/novadent.jpg')}}" width="100%">
@@ -43,24 +47,29 @@
     <div class="container my-3">
         <div class="row justify-content-center">
             <h3 class="w-100 text-center my-3">Наши услуги</h3>
+
+
+            @foreach($services as $service)
             <div class="col-xs-12 col-lg-6 my-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <h4>{{$service['name']}}</h4>
+                {{$service['short_description']}}
             </div>
-            <div class="col-xs-12 col-lg-6 my-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </div>
-            <div class="col-xs-12 col-lg-6 my-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </div>
-            <div class="col-xs-12 col-lg-6 my-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </div>
-            <div class="col-xs-12 col-lg-6 my-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </div>
-            <div class="col-xs-12 col-lg-6 my-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </div>
+            @endforeach
+            {{--<div class="col-xs-12 col-lg-6 my-4">--}}
+                {{--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.--}}
+            {{--</div>--}}
+            {{--<div class="col-xs-12 col-lg-6 my-4">--}}
+                {{--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.--}}
+            {{--</div>--}}
+            {{--<div class="col-xs-12 col-lg-6 my-4">--}}
+                {{--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.--}}
+            {{--</div>--}}
+            {{--<div class="col-xs-12 col-lg-6 my-4">--}}
+                {{--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.--}}
+            {{--</div>--}}
+            {{--<div class="col-xs-12 col-lg-6 my-4">--}}
+                {{--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.--}}
+            {{--</div>--}}
         </div>
     </div>
 

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\ServiceGroups;
 use App\SiteInfo;
 use App\TextPages;
+use App\News;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -25,15 +27,9 @@ class MainController extends Controller
      */
     public function index()
     {
-//        $data = SiteInfo::get();
-//
-//        $info = [];
-//
-//        foreach ($data->toArray() as $item){
-//            $info[$item['code']] = $item['value'];
-//        }
+        $data = ServiceGroups::where(["active" => 1])->get();
 
-        return view('index');
+        return view('index',['services' => $data]);
     }
 
     public function about()
@@ -44,12 +40,23 @@ class MainController extends Controller
 
     public function news()
     {
-        return view('news');
+        $data = News::get()->all();
+        return view('news.index',['list'=>$data]);
+    }
+
+    public function newsElement($code)
+    {
+        $data = News::where(['code'=>$code])->first();
+
+//        dd($data);
+
+        return view('news.element',['news'=>$data]);
     }
 
     public function services()
     {
-       return view('services');
+        $data = ServiceGroups::where(["active" => 1])->get();
+        return view('services',['services' => $data]);
     }
 
     public function contacts()

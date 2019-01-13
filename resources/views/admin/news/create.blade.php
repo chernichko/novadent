@@ -35,6 +35,11 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="newsShortDescription">Краткое описание</label>
+                    <textarea class="form-control" name="short_description" id="newsShortDescription" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
                     <label for="newsDescription">Описание</label>
                     <textarea class="form-control" name="description" id="newsDescription" rows="15"></textarea>
                 </div>

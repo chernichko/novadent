@@ -8,7 +8,7 @@ class ServiceGroups extends Model
 {
     protected $table = 'service_groups';
 
-    protected $fillable = ['name','code','description','updated_at'];
+    protected $fillable = ['name','code','short_description','description','updated_at'];
 
     protected $hidden = ['created_at'];
 
@@ -22,6 +22,7 @@ class ServiceGroups extends Model
 
         $service->name = $data['name'];
         $service->code = $data['code'];
+        $service->short_description = $data['shortdescription'];
         $service->description = $data['description'];
         $service->active = isset($data['active']) ? 1 : 0 ;
 

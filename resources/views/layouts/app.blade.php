@@ -29,8 +29,8 @@
                         <img src="{{URL::asset('/storage/header_logo.png')}}">
                     </a>
                 </div>
-                <div class="col-xs-12 col-md-3"></div>
-                <div class="col-xs-12 col-md-3 text-right header_feedback">
+                <div class="col-xs-12 col-md-2"></div>
+                <div class="col-xs-12 col-md-4 text-right header_feedback">
 
                     <a href="#" data-toggle="modal" data-target="#exampleModal">
                         Записаться на прием
@@ -45,10 +45,10 @@
                         {{$info['phone1']}}
                     </div>
                     <div class="header_messangers">
-                        <a href="https://www.instagram.com/novadent_vlg/" rel="nofollow"><span class="messanger_tm"></span></a>
+                        <span class="messanger_tm"></span>
                         <span class="messanger_vb"></span>
                         <span class="messanger_wp"></span>
-                        <span class="messanger_ig"></span>
+                        <a href="https://www.instagram.com/novadent_vlg/" rel="nofollow"><span class="messanger_ig"></span></a>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item mx-2"><a href="/about-us" class="nav-link">О нас</a></li>
+                    <li class="nav-item"><a href="/about-us" class="nav-link">О нас</a></li>
                     <li class="nav-item mx-2"><a href="/services" class="nav-link">Услуги и цены</a></li>
                     <li class="nav-item mx-2"><a href="/news" class="nav-link">Новости</a></li>
                     <li class="nav-item mx-2"><a href="#" class="nav-link">Галлерея</a></li>
@@ -78,6 +78,13 @@
     </nav>
 
     <main class="">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    @yield('breadcrumbs')
+                </ol>
+            </nav>
+        </div>
         @yield('content')
     </main>
 
@@ -102,12 +109,14 @@
                     <div class="col-xs-12 col-sm-4 my-4">
                         <h5>Услуги</h5>
                         <ul class="footer_menu">
-                            <li><a href="#" class="footer_menu_link">Протезирование</a></li>
-                            <li><a href="#" class="footer_menu_link">Лечение кариеса</a></li>
-                            <li><a href="#" class="footer_menu_link">Эстетическая реставрация</a></li>
-                            <li><a href="#" class="footer_menu_link">Профилактика и лечение парадонта</a></li>
-                            <li><a href="#" class="footer_menu_link">Профессиональная чистка</a></li>
-                            <li><a href="#" class="footer_menu_link">Отбеливание</a></li>
+                            @foreach($listServices as $service)
+                            <li><a href="#" class="footer_menu_link">{{$service['name']}}</a></li>
+                            @endforeach
+                            {{--<li><a href="#" class="footer_menu_link">Лечение кариеса</a></li>--}}
+                            {{--<li><a href="#" class="footer_menu_link">Эстетическая реставрация</a></li>--}}
+                            {{--<li><a href="#" class="footer_menu_link">Профилактика и лечение парадонта</a></li>--}}
+                            {{--<li><a href="#" class="footer_menu_link">Профессиональная чистка</a></li>--}}
+                            {{--<li><a href="#" class="footer_menu_link">Отбеливание</a></li>--}}
                         </ul>
                     </div>
                     <div class="col-xs-12 col-sm-3 my-4 footer_phone">
@@ -121,7 +130,7 @@
                             <span class="messanger_tm"></span>
                             <span class="messanger_vb"></span>
                             <span class="messanger_wp"></span>
-                            <span class="messanger_ig"></span>
+                            <a href="https://www.instagram.com/novadent_vlg/" rel="nofollow"><span class="messanger_ig"></span></a>
                         </div>
                     </div>
                 </div>

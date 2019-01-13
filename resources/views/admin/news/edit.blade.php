@@ -43,8 +43,13 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="newsShortDescription">Краткое описание</label>
+                    <textarea class="form-control" name="short_description" id="newsShortDescription" rows="3">{{$new->short_description}}</textarea>
+                </div>
+
+                <div class="form-group">
                     <label for="newsDescription">Описание</label>
-                    <textarea class="form-control" name="description" id="newsDescription" rows="15">{{$new->description}}</textarea>
+                    <textarea class="form-control" name="description" id="newsDescription" rows="15">{{htmlspecialchars_decode($new->description)}}</textarea>
                 </div>
 
                 <div class="form-group form-check">
