@@ -20,7 +20,10 @@ Route::get('/', 'MainController@index')->name('main');
 
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about-us', 'MainController@about')->name('about');
+
 Route::get('/news', 'MainController@news')->name('news');
+Route::get('/news/{code}', 'MainController@newsElement')->name('news.element');
+
 Route::get('/services', 'MainController@services')->name('services');
 Route::get('/contacts', 'MainController@contacts')->name('contacts');
 
