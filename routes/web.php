@@ -25,6 +25,7 @@ Route::get('/news', 'MainController@news')->name('news');
 Route::get('/news/{code}', 'MainController@newsElement')->name('news.element');
 
 Route::get('/services', 'MainController@services')->name('services');
+Route::get('/services/{code}', 'MainController@servicesElement')->name('services.element');
 Route::get('/contacts', 'MainController@contacts')->name('contacts');
 
 //Route::group(['prefix' => 'admin','namespace' => 'Admin'], function () {
