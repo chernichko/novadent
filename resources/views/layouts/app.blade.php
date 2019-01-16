@@ -86,6 +86,8 @@
             </nav>
         </div>
         @yield('content')
+
+        @yield('widgets')
     </main>
 
     <div class="footer">

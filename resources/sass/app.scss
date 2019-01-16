@@ -251,3 +251,20 @@ h3{
 
   //}
 }
+
+.widget-doctor {
+
+  border:1px solid #cecece;
+  border-radius: 15px;
+  padding: 20px 25px 0px;
+
+  &:first-child{
+    margin-left:0;
+  }
+
+  &_image {
+    height: 150px;
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+}

@@ -19,3 +19,7 @@
 </div>
 
 @endsection
+
+@section('widgets')
+    @widget('doctors')
+@endsection

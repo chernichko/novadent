@@ -18,7 +18,7 @@
 
                     <p>{{$new['short_description']}}</p>
 
-                    <a href="/news/{{$new['code']}}">Подробнее...</a>
+                    <a href="/news/{{$new['code']}}" class="text-link">Подробнее...</a>
                 </li>
             @endforeach
         </ul>

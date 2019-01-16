@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-group">
                     <label for="descriptionDoctor">Описание</label>
-                    <textarea class="form-control" id="descriptionDoctor" value="{{$doctor->description}}" name="description" rows="8"></textarea>
+                    <textarea class="form-control" id="descriptionDoctor" name="description" rows="8">{{$doctor->description}}</textarea>
                 </div>
 
                 <div class="form-group form-check">

@@ -40,7 +40,7 @@ class MainController extends Controller
 
     public function news()
     {
-        $data = News::get()->all();
+        $data = News::where(['active' => 1])->get()->all();
         return view('news.index',['list'=>$data]);
     }
 

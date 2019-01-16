@@ -8,7 +8,7 @@ class Doctors extends Model
 {
     protected $table = 'doctors';
 
-    protected $fillable = ['name','specialization','stage','updated_at'];
+    protected $fillable = ['name','specialization','description','stage','updated_at'];
 
     protected $hidden = ['created_at'];
 

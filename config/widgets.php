@@ -8,5 +8,6 @@
 return [
 
 	'test' => 'App\Widgets\TestWidget',
+	'doctors' => 'App\Widgets\DoctorsWidget',
 
 ];
