@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-15">
 
     <h2>Наши врачи</h2>
     <div class="row">
