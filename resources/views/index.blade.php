@@ -52,24 +52,9 @@
             @foreach($services as $service)
             <div class="col-xs-12 col-lg-6 my-4">
                 <h4>{{$service['name']}}</h4>
-                {{$service['short_description']}}
+                {{$service['short_description']}} <br><a href="/services/{{$service['code']}}" class="text-link">Подробнее...</a>
             </div>
             @endforeach
-            {{--<div class="col-xs-12 col-lg-6 my-4">--}}
-                {{--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.--}}
-            {{--</div>--}}
-            {{--<div class="col-xs-12 col-lg-6 my-4">--}}
-                {{--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.--}}
-            {{--</div>--}}
-            {{--<div class="col-xs-12 col-lg-6 my-4">--}}
-                {{--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.--}}
-            {{--</div>--}}
-            {{--<div class="col-xs-12 col-lg-6 my-4">--}}
-                {{--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.--}}
-            {{--</div>--}}
-            {{--<div class="col-xs-12 col-lg-6 my-4">--}}
-                {{--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.--}}
-            {{--</div>--}}
         </div>
     </div>
 
