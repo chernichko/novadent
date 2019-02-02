@@ -14,6 +14,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
 <div id="app">
@@ -65,7 +67,7 @@
                     <li class="nav-item"><a href="/about-us" class="nav-link">О нас</a></li>
                     <li class="nav-item mx-2"><a href="/services" class="nav-link">Услуги и цены</a></li>
                     <li class="nav-item mx-2"><a href="/news" class="nav-link">Новости</a></li>
-                    <li class="nav-item mx-2"><a href="#" class="nav-link">Галлерея</a></li>
+                    <li class="nav-item mx-2"><a href="/gallery" class="nav-link">Галлерея</a></li>
                     <li class="nav-item mx-2"><a href="#" class="nav-link">Отзывы</a></li>
                     <li class="nav-item mx-2"><a href="/contacts" class="nav-link">Контакты</a></li>
                 </ul>

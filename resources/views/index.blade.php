@@ -31,16 +31,28 @@
         <div class="row justify-content-center">
             <h3 class="w-100 text-center my-3">Преимущества</h3>
             <div class="advantages_item col-xs-12 col-sm-6 col-lg-3 my-4">
-                Низкие цены
+                <div class="advantages_item_block">
+                    <i class="fa fa-credit-card fa-5x" aria-hidden="true"></i>
+                    <div class="advantages_item_block-text"><p>Низкие цены</p></div>
+                </div>
             </div>
             <div class="advantages_item col-xs-12 col-sm-6 col-lg-3 my-4">
-                Опытные и внимательные доктора
+                <div class="advantages_item_block">
+                    <i class="fa fa-user-md fa-5x" aria-hidden="true"></i>
+                    <div class="advantages_item_block-text"><p>Опытные и внимательные доктора</p></div>
+                </div>
             </div>
             <div class="advantages_item col-xs-12 col-sm-6 col-lg-3 my-4">
-                Лечение без боли
+                <div class="advantages_item_block">
+                    <i class="fa fa-heart fa-5x" aria-hidden="true"></i>
+                    <div class="advantages_item_block-text"><p>Лечение без боли</p></div>
+                </div>
             </div>
             <div class="advantages_item col-xs-12 col-sm-6 col-lg-3 my-4">
-                Транспортная доступность
+                <div class="advantages_item_block">
+                    <i class="fa fa-car fa-5x" aria-hidden="true"></i>
+                    <div class="advantages_item_block-text"><p>Транспортная доступность</p></div>
+                </div>
             </div>
         </div>
     </div>

@@ -1,4 +1,3 @@
-
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i&amp;subset=cyrillic');
 
@@ -7,6 +6,10 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+@import '~owl.carousel/dist/assets/owl.carousel.css';
+@import '~lightbox2/dist/css/lightbox.min.css';
+//@import '~@fortawesome/fontawesome-free/css/all.min.css';
 
 //a{
 //  color:#ff8a3d;
@@ -176,7 +179,29 @@ h3{
   .advantages_item {
     font-size: 20px;
     text-align: center;
-    border: 1px solid #ececec;
+    //border: 1px solid #ececec;
+  }
+
+  .advantages_item_block {
+    background: #86cedb;
+    color: #fff;
+    height: 100%;
+    border-radius: 5px;
+    padding-top:30px;
+  }
+
+  .advantages_item_block-text{
+    position: relative;
+    height: 115px;
+    text-align: center;
+  }
+
+  .advantages_item_block p {
+    clear:both;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
   }
 
 }
@@ -267,4 +292,8 @@ h3{
     overflow: hidden;
     margin-bottom: 15px;
   }
+}
+
+.gallery img{
+  max-width:150px;
 }
