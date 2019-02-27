@@ -16,4 +16,4 @@ mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/admin/sb-admin.scss', 'public/css/admin');
 
-mix.copy('./node_modules/ckeditor', 'public/js/ckeditor');
+mix.copy('./node_modules/ckeditor', 'public/js/ckeditor');//переделать импортантом

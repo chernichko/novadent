@@ -52,12 +52,13 @@ class AdminController extends Controller
             SiteInfo::saveInfo($request->all());
         }
 
-        $data = SiteInfo::all();
-
-        $info = [];
-        foreach ($data as $row){
-            $info[$row->code] = $row->value;
-        }
+        $info = SiteInfo::getSiteInfo();
+//        $data = SiteInfo::all();
+//
+//        $info = [];
+//        foreach ($data as $row){
+//            $info[$row->code] = $row->value;
+//        }
 
         return view('admin.info',['data' => $info]);
     }

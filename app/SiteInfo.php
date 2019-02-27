@@ -10,6 +10,30 @@ class SiteInfo extends Model
 
     protected $fillable = ['code','value'];
 
+    public static function getSiteInfo(){
+        $data = SiteInfo::all();
+
+        $info = [];
+        foreach ($data as $row){
+            $info[$row->code] = $row->value;
+        }
+
+        if(empty($info)){
+            $info=[
+              'name'=>'',
+              'email'=>'',
+              'phone'=>'',
+              'phone1'=>'',
+              'address'=>'',
+              'gps-data'=>'',
+              'worktimeWeekday'=>'',
+              'worktimeWeekend'=>'',
+            ];
+        }
+
+        return $info;
+    }
+
     public static function saveinfo($data){
 
         //$path = $data->file('logotip')->store('files');

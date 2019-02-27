@@ -15,19 +15,23 @@
 //    return view('welcome');
 //});
 
-Auth::routes();
-Route::get('/', 'MainController@index')->name('main');
+
+Route::group(['prefix' => '/','middleware' => ['mainInfo']], function () {
+
+    Auth::routes();
+    Route::get('/', 'MainController@index')->name('main');
 
 //Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/about-us', 'MainController@about')->name('about');
+    Route::get('/about-us', 'MainController@about')->name('about');
 
-Route::get('/news', 'MainController@news')->name('news');
-Route::get('/news/{code}', 'MainController@newsElement')->name('news.element');
+    Route::get('/news', 'MainController@news')->name('news');
+    Route::get('/news/{code}', 'MainController@newsElement')->name('news.element');
 
-Route::get('/services', 'MainController@services')->name('services');
-Route::get('/services/{code}', 'MainController@servicesElement')->name('services.element');
-Route::get('/contacts', 'MainController@contacts')->name('contacts');
+    Route::get('/services', 'MainController@services')->name('services');
+    Route::get('/services/{code}', 'MainController@servicesElement')->name('services.element');
+    Route::get('/contacts', 'MainController@contacts')->name('contacts');
 
+});
 //Route::group(['prefix' => 'admin','namespace' => 'Admin'], function () {
 //    // Маршруты аутентификации...
 //    Route::get('/login', 'Auth\LoginController@showLoginForm');
@@ -39,7 +43,7 @@ Route::get('/contacts', 'MainController@contacts')->name('contacts');
 ////    Route::post('/register', 'Auth\AuthController@postRegister');
 //});
 
-Route::group(['prefix' => 'admin','namespace' => 'Admin', 'middleware' => ['auth','checkAdmin']], function () {
+Route::group(['prefix' => 'admin','namespace' => 'Admin', 'middleware' => ['auth','checkAdmin','infoToLayout']], function () {
 
     Route::get('/', 'AdminController@index')->name('admin');
     Route::get('/info', 'AdminController@info')->name('admin.info');

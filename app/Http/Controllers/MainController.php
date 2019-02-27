@@ -36,6 +36,7 @@ class MainController extends Controller
     public function about()
     {
         $data = TextPages::where(['code'=>'about-us'])->first();
+
         return view('about',['data'=>$data]);
     }
 
