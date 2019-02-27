@@ -19,10 +19,13 @@
     {{--<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">--}}
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    {{--<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">--}}
 
     <!-- Page level plugin CSS-->
     {{--<link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">--}}
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/admin/sb-admin.css') }}" rel="stylesheet">
@@ -229,7 +232,7 @@
 <!-- Custom scripts for all pages-->
 <script src="{{ asset('js/admin/sb-admin.js') }}"></script>
 
-<script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+{{--<script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>--}}
 
 @yield('scripts')
 
