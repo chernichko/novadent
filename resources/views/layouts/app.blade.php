@@ -106,17 +106,16 @@
                                 {{$info['phone1']}}
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 text-right header_phone">
-                            <div class="header_messangers">
-                                <span class="messanger_tm"></span>
-                                <span class="messanger_vb"></span>
-                                <span class="messanger_wp"></span>
-                                <a href="https://www.instagram.com/novadent_vlg/" rel="nofollow"><span class="messanger_ig"></span></a>
-                            </div>
-                        </div>
                     </div>
+                </div>
 
-
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 text-right header_phone">
+                    <div class="header_messangers">
+                        <span class="messanger_tm"></span>
+                        <span class="messanger_vb"></span>
+                        <span class="messanger_wp"></span>
+                        <a href="https://www.instagram.com/novadent_vlg/" rel="nofollow"><span class="messanger_ig"></span></a>
+                    </div>
                 </div>
 
                 <div class="col-xs-12 col-md-12 header_feedback_block" >
