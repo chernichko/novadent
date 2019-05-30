@@ -39,7 +39,7 @@
         </div>
     </div>
 
-<div class="container">
+<div class="container my-3">
     <div class="row justify-content-center">
         <div class="about-us-text">
                 <h3>О нас</h3>
