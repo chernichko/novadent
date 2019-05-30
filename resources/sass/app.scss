@@ -49,7 +49,11 @@ h3{
   }
 }
 
-.header_feedback{line-height:70px;}
+.header_feedback_block{
+  overflow: auto;
+}
+
+.header_feedback{float:left}
 .header_feedback_modal{
   background: #fff;
   padding:20px;
@@ -114,8 +118,9 @@ h3{
   line-height: 35px;
 }
 
-.header_phone_dop{
+.header_phone,.header_social{
   font-size:16px;
+  float:left;
 }
 
 //.header_messangers{
@@ -124,25 +129,25 @@ h3{
   .messanger_wp,
   .messanger_ig{
     //border: 1px solid;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     float: right;
-    margin: 1px;
+    margin: 5px;
     background: url('/files/messangers.png') no-repeat;
     background-size: cover;
   }
 
   .messanger_tm{
-    background-position-x:-43px;
+    background-position-x:-50px;
   }
   .messanger_vb{
-    background-position-x:-129px;
+    background-position-x:-151px;
   }
   .messanger_wp{
-    background-position-x:-216px;
+    background-position-x:-252px;
   }
   .messanger_ig{
-    background-position-x:-259px;
+    background-position-x:-302px;
   }
 
 //}
@@ -160,14 +165,14 @@ h3{
     }
   }
 
-  a:first-child
-  {
-    padding-left:0!important;
-  }
-
-  .navbar-nav:first-child{
-    margin-left:0!important;
-  }
+  //a:first-child
+  //{
+  //  padding-left:0!important;
+  //}
+  //
+  //.navbar-nav:first-child{
+  //  margin-left:0!important;
+  //}
 
   .navbar-nav .nav-link{
     //font-weight:700;
@@ -206,13 +211,48 @@ h3{
 
 }
 
+@media (max-width: 540px) {
+
+  .advantages .advantages_item_block-text{
+    height: 70px;
+  }
+
+}
+
+
+
+.front_image{
+  width: 100%;
+  max-height: 550px;
+  background-image: url('/files/central-foto.png');
+  background-size: cover;
+  height: 858px;
+  background-position: center top;
+}
+
 .form_make_appointment{
   margin: 0 auto;
   width:350px;
+  margin-left:50%;
 }
 
 .form_feedback{
   padding:120px;
+  background-image: url('/files/zayavka.png');
+  background-position: center top;
+}
+
+@media (max-width: 540px) {
+
+  .form_make_appointment{
+    margin: 0 auto;
+    width:250px;
+  }
+
+  .form_feedback{
+    padding:60px;
+    background-position: right;
+  }
 }
 
 .footer{
