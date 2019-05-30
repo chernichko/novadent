@@ -57,6 +57,7 @@ h3{
 .header_feedback_modal{
   background: #fff;
   padding:20px;
+  display:inline-block;
 }
 .header_feedback_modal-title{
   padding-left: 55px;
@@ -81,7 +82,13 @@ h3{
   height: 100%;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 980px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 576px) {
   .container {
     max-width: 960px;
   }
@@ -121,9 +128,17 @@ h3{
 .header_phone,.header_social{
   font-size:16px;
   float:left;
+  padding: 0;
 }
 
-//.header_messangers{
+.header_messangers{
+
+    overflow: auto;
+
+    a {
+      display: inline-block;
+    }
+
   .messanger_tm,
   .messanger_vb,
   .messanger_wp,
@@ -150,7 +165,45 @@ h3{
     background-position-x:-302px;
   }
 
-//}
+}
+
+.mobile-header{
+
+  width:100%;
+
+
+  &_logo{
+
+  width:50%;
+    text-align:center;
+    display:flex;
+
+    .navbar-brand{
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      //margin-top: 20px;
+
+      img{
+        min-width: 110px;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 250px;
+        padding: 0 25px;
+      }
+    }
+
+  }
+
+  &_feedback{
+    width:50%;
+
+    div{
+      padding:0;
+    }
+
+  }
+}
 
 .main_menu{
   background: #86cedb;
@@ -228,6 +281,14 @@ h3{
   background-size: cover;
   height: 858px;
   background-position: center top;
+  display:flex;
+
+  img{
+    margin: auto;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 140px;
+  }
 }
 
 .form_make_appointment{
@@ -242,6 +303,18 @@ h3{
   background-position: center top;
 }
 
+@media (min-width: 855px) {
+  .mobile-header {
+    display: none;
+  }
+}
+
+  @media (max-width: 855px) {
+    .desctop-header{
+      display:none;
+    }
+  }
+
 @media (max-width: 540px) {
 
   .form_make_appointment{
@@ -252,6 +325,15 @@ h3{
   .form_feedback{
     padding:60px;
     background-position: right;
+  }
+
+  .front_image{
+    max-height: 350px;
+  }
+
+  .front_image img{
+    width:250px;
+    margin-top:60px;
   }
 }
 

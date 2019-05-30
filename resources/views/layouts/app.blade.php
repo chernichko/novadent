@@ -22,7 +22,7 @@
     <header id="header">
         <div class="container">
 
-            <div class="row">
+            <div class="row desctop-header">
                 <div class="col-xs-12 col-md-3 header_logo">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         <img src="{{asset('storage/header_logo.png')}}">
@@ -31,14 +31,14 @@
 
                 <div class="col-xs-12 col-md-9">
                     <div class="col-xs-12 col-md-12" >
-                        <div class="col-xs-12 col-md-5 text-right header_feedback">
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-right header_feedback">
 
                             <a href="#" data-toggle="modal" data-target="#exampleModal">
                                 Записаться на прием
                             </a>
 
                         </div>
-                        <div class="col-xs-12 col-md-3 text-right header_phone">
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-right header_phone">
                             <div class="header_phone_dop">
                                 8 8442 {{$info['phone']}}
                             </div>
@@ -46,7 +46,7 @@
                                 {{$info['phone1']}}
                             </div>
                         </div>
-                        <div class="col-xs-12 col-md-4 text-right header_phone">
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-right header_phone">
                             <div class="header_messangers">
                                 <span class="messanger_tm"></span>
                                 <span class="messanger_vb"></span>
@@ -78,6 +78,68 @@
                             </div>
                         </nav>
                     </div>
+                </div>
+
+            </div>
+
+            <div class="row mobile-header">
+                <div class="mobile-header_logo">
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        <img src="{{asset('storage/header_logo.png')}}">
+                    </a>
+                </div>
+
+                <div class="mobile-header_feedback">
+                    <div class="col-xs-12 col-md-12" >
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 text-right header_feedback">
+
+                            <a href="#" data-toggle="modal" data-target="#exampleModal">
+                                Записаться на прием
+                            </a>
+
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 text-right header_phone">
+                            <div class="header_phone_dop">
+                                8 8442 {{$info['phone']}}
+                            </div>
+                            <div class="header_phone_dop">
+                                {{$info['phone1']}}
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 text-right header_phone">
+                            <div class="header_messangers">
+                                <span class="messanger_tm"></span>
+                                <span class="messanger_vb"></span>
+                                <span class="messanger_wp"></span>
+                                <a href="https://www.instagram.com/novadent_vlg/" rel="nofollow"><span class="messanger_ig"></span></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-xs-12 col-md-12 header_feedback_block" >
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <div class="container">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <!-- Left Side Of Navbar -->
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item"><a href="/about-us" class="nav-link">О нас</a></li>
+                                    <li class="nav-item"><a href="/services" class="nav-link">Услуги и цены</a></li>
+                                    <li class="nav-item"><a href="/news" class="nav-link">Новости</a></li>
+                                    <li class="nav-item"><a href="/gallery" class="nav-link">Галлерея</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link">Отзывы</a></li>
+                                    <li class="nav-item"><a href="/contacts" class="nav-link">Контакты</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </nav>
                 </div>
 
             </div>

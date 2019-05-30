@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('breadcrumbs')
-    <div class="front_image"></div>
-
-    <!---img src="{{URL::asset('/files/central-foto.png')}}" width="100%" --->
+    <div class="front_image">
+        <img src="{{URL::asset('/files/water-logo.png')}}">
+    </div>
 @endsection
 
 @section('content')
@@ -14,6 +14,7 @@
             <div class="advantages_item col-xs-12 col-sm-6 col-lg-3 my-4">
                 <div class="advantages_item_block">
                     <i class="fa fa-credit-card fa-5x" aria-hidden="true"></i>
+                    <!---img src="{{URL::asset('/files/nizkie-ceni.png')}}"--->
                     <div class="advantages_item_block-text"><p>Низкие цены</p></div>
                 </div>
             </div>
