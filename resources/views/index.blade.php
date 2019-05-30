@@ -39,9 +39,9 @@
         </div>
     </div>
 
-<div class="container">
+<div class="container mx-3">
     <div class="row justify-content-center">
-        <div class="about-us-text my-3">
+        <div class="about-us-text">
                 <h3>О нас</h3>
                 <p class="text-justify">Повседневная практика показывает, что постоянное информационно-пропагандистское
                     обеспечение нашей деятельности позволяет оценить значение направлений прогрессивного развития.
