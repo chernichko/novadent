@@ -41,7 +41,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-lg-6">
+        <div class="about-us-text">
                 <h3>О нас</h3>
                 <p class="text-justify">Повседневная практика показывает, что постоянное информационно-пропагандистское
                     обеспечение нашей деятельности позволяет оценить значение направлений прогрессивного развития.
@@ -56,11 +56,12 @@
                 </p>
                 <a href="#" py-2><a href="/about-us" class="text-link">Подробнее...</a>
         </div>
-        <div class="col-lg-6">
-            <img src="{{URL::asset('/storage/novadent.jpg')}}" width="100%">
-        </div>
     </div>
 </div>
+
+    <div>
+        <img src="{{URL::asset('/files/nizh-foto.png')}}" width="100%">
+    </div>
 
     <div class="container my-3">
         <div class="row justify-content-center">
@@ -68,7 +69,7 @@
 
 
             @foreach($services as $service)
-            <div class="col-xs-12 col-lg-6 my-4">
+            <div class="col-xs-12 col-md-6 my-4">
                 <h4>{{$service['name']}}</h4>
                 {{$service['short_description']}} <br><a href="/services/{{$service['code']}}" class="text-link">Подробнее...</a>
             </div>
