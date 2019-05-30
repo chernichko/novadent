@@ -27,6 +27,6 @@
 
 @endsection
 
-@section('widgets')
-    @widget('doctors')
-@endsection
+{{--@section('widgets')--}}
+{{--    @widget('doctors')--}}
+{{--@endsection--}}

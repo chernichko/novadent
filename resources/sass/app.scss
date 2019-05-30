@@ -100,21 +100,31 @@ h3{
 
 .header_feedback{
 
-  a {
-    color: #000;
-    font-size: 16px;
-    border-bottom: 1px #000 dashed;
+  margin-bottom:15px;
+  padding: 5px 10px;
 
-    -webkit-text-decoration-skip: objects;
-    -webkit-transition-duration: 0.3s;
-    -moz-transition-duration: 0.3s;
-    transition-duration: 0.3s;
+  a {
+    //color: #000;
+    font-size: 16px;
+    //border-bottom: 1px #000 dashed;
+
+    background: #86cedb;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    //-webkit-text-decoration-skip: objects;
+    //-webkit-transition-duration: 0.3s;
+    //-moz-transition-duration: 0.3s;
+    //transition-duration: 0.3s;
   }
 
   a:hover{
     text-decoration: none;
-    color:#ff8a3d;
-    border-bottom: 1px #ff8a3d dashed;
+    cursor:pointer;
+    //color:#ff8a3d;
+    //border-bottom: 1px #ff8a3d dashed;
   }
 
 }
@@ -148,22 +158,22 @@ h3{
     height: 35px;
     float: right;
     margin: 5px;
-    background: url('/files/messangers.png') no-repeat;
-    background-size: cover;
+    //background: url('/files/messangers.png') no-repeat;
+    //background-size: cover;
   }
 
-  .messanger_tm{
-    background-position-x:-50px;
-  }
-  .messanger_vb{
-    background-position-x:-151px;
-  }
-  .messanger_wp{
-    background-position-x:-252px;
-  }
-  .messanger_ig{
-    background-position-x:-302px;
-  }
+  //.messanger_tm{
+  //  background-position-x:-50px;
+  //}
+  //.messanger_vb{
+  //  background-position-x:-151px;
+  //}
+  //.messanger_wp{
+  //  background-position-x:-252px;
+  //}
+  //.messanger_ig{
+  //  background-position-x:-302px;
+  //}
 
 }
 
@@ -294,7 +304,7 @@ h3{
 .form_make_appointment{
   margin: 0 auto;
   width:350px;
-  margin-left:50%;
+  //margin-left:50%;
 }
 
 .form_feedback{
@@ -337,9 +347,35 @@ h3{
   }
 }
 
+//страница новостей
+li.list-group-item {
+  padding-left: 0;
+}
+
+//контакты
+
+
+.contacts {
+
+  h2{
+    display:block;
+    margin: 0;
+    padding: 0;
+  }
+
+  p{
+    padding:0;
+    margin:0;
+  }
+  //font-size: 20px;
+  //text-align: center;
+  //border: 1px solid #ececec;
+}
+
 .footer{
   height: auto;
   background: #556567;
+  margin-top:35px;
 }
 
 .footer h5{
@@ -379,22 +415,22 @@ h3{
     font-size:16px;
   }
 
-  //.footer_messangers{
-  //  .messanger_tm,
-  //  .messanger_vb,
-  //  .messanger_wp,
-  //  .messanger_ig{
-  //    border: 1px solid;
-  //    width: 30px;
-  //    height: 30px;
-  //    float: right;
-  //    margin: 1px;
+  .footer_messangers{
+    .messanger_tm,
+    .messanger_vb,
+    .messanger_wp,
+    .messanger_ig{
+      //border: 1px solid;
+      width: 35px;
+      height: 35px;
+      float: right;
+      margin: 5px;
   //    background: url('/files/messangers.png') no-repeat;
-  //  }
+    }
   //
   //  .messanger_tm{
   //    background-position: 0 0;
-  //  }
+    }
 
   //}
 }

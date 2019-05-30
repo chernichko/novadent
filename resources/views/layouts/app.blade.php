@@ -48,10 +48,14 @@
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-right header_phone">
                             <div class="header_messangers">
-                                <span class="messanger_tm"></span>
+                                <img src="{{asset('files/social_tg.png')}}" class="messanger_tm">
+                                <img src="{{asset('files/social_vb.png')}}" class="messanger_vb">
+                                <img src="{{asset('files/social_wa.png')}}" class="messanger_wp">
+                                <img src="{{asset('files/social_vk.png')}}" class="messanger_ig">
+                                <!---span class="messanger_tm"></span>
                                 <span class="messanger_vb"></span>
                                 <span class="messanger_wp"></span>
-                                <a href="https://www.instagram.com/novadent_vlg/" rel="nofollow"><span class="messanger_ig"></span></a>
+                                <a href="https://www.instagram.com/novadent_vlg/" rel="nofollow"><span class="messanger_ig"></span></--->
                             </div>
                         </div>
                     </div>
@@ -111,10 +115,13 @@
 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 text-right header_phone">
                     <div class="header_messangers">
-                        <span class="messanger_tm"></span>
-                        <span class="messanger_vb"></span>
+                        <img src="{{asset('files/social_tg.png')}}" class="messanger_tm">
+                        <img src="{{asset('files/social_vb.png')}}" class="messanger_vb">
+                        <img src="{{asset('files/social_wa.png')}}" class="messanger_wp">
+                        <img src="{{asset('files/social_vk.png')}}" class="messanger_ig">
+                        <!--span class="messanger_vb"></span>
                         <span class="messanger_wp"></span>
-                        <a href="https://www.instagram.com/novadent_vlg/" rel="nofollow"><span class="messanger_ig"></span></a>
+                        <a href="https://www.instagram.com/novadent_vlg/" rel="nofollow"><span class="messanger_ig"></span></---->
                     </div>
                 </div>
 
@@ -181,11 +188,6 @@
                             @foreach($listServices as $service)
                             <li><a href="#" class="footer_menu_link">{{$service['name']}}</a></li>
                             @endforeach
-                            {{--<li><a href="#" class="footer_menu_link">Лечение кариеса</a></li>--}}
-                            {{--<li><a href="#" class="footer_menu_link">Эстетическая реставрация</a></li>--}}
-                            {{--<li><a href="#" class="footer_menu_link">Профилактика и лечение парадонта</a></li>--}}
-                            {{--<li><a href="#" class="footer_menu_link">Профессиональная чистка</a></li>--}}
-                            {{--<li><a href="#" class="footer_menu_link">Отбеливание</a></li>--}}
                         </ul>
                     </div>
                     <div class="col-xs-12 col-sm-3 my-4 footer_phone">
@@ -196,10 +198,12 @@
                             {{$info['phone1']}}
                         </div>
                         <div class="footer_messangers">
-                            <span class="messanger_tm"></span>
-                            <span class="messanger_vb"></span>
-                            <span class="messanger_wp"></span>
-                            <a href="https://www.instagram.com/novadent_vlg/" rel="nofollow"><span class="messanger_ig"></span></a>
+                            <img src="{{asset('files/social_tg.png')}}" class="messanger_tm">
+                            <img src="{{asset('files/social_vb.png')}}" class="messanger_vb">
+                            <img src="{{asset('files/social_wa.png')}}" class="messanger_wp">
+                            <a href="https://www.instagram.com/novadent_vlg/" rel="nofollow">
+                                <img src="{{asset('files/social_vk.png')}}" class="messanger_ig">
+                            </a>
                         </div>
                     </div>
                 </div>
