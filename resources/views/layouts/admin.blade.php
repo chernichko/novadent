@@ -14,16 +14,6 @@
 
     <title>SB Admin - Dashboard</title>
 
-
-    <!-- Bootstrap core CSS-->
-    {{--<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">--}}
-
-    <!-- Custom fonts for this template-->
-    {{--<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">--}}
-
-    <!-- Page level plugin CSS-->
-    {{--<link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">--}}
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
@@ -138,21 +128,21 @@
                 <a class="dropdown-item" href="{{route('admin.pages.create')}}">Добавить</a>
             </div>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.doctors')}}">
-                <i class="fas fa-fw fa-user-md"></i>
-                <span>Врачи</span></a>
-        </li>
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link" href="{{route('admin.doctors')}}">--}}
+{{--                <i class="fas fa-fw fa-user-md"></i>--}}
+{{--                <span>Врачи</span></a>--}}
+{{--        </li>--}}
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.gallery')}}">
                 <i class="fas fa-fw fa-picture-o"></i>
                 <span>Галлерея</span></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.licenses')}}">
-                <i class="fas fa-fw fa-file-text-o"></i>
-                <span>Лицензии</span></a>
-        </li>
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link" href="{{route('admin.licenses')}}">--}}
+{{--                <i class="fas fa-fw fa-file-text-o"></i>--}}
+{{--                <span>Лицензии</span></a>--}}
+{{--        </li>--}}
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.feedback')}}">
                 <i class="fas fa-fw fa-comment-o"></i>
