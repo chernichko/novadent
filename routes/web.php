@@ -35,6 +35,8 @@ Route::group(['prefix' => '/','middleware' => ['mainInfo']], function () {
     Route::get('/reviews', 'ReviewsController@index')->name('reviews');
     Route::post('/reviews/add', 'ReviewsController@add')->name('reviews.add');
 
+    Route::get('/gallery', 'GalleryController@index')->name('gallery');
+
 });
 //Route::group(['prefix' => 'admin','namespace' => 'Admin'], function () {
 //    // Маршруты аутентификации...
