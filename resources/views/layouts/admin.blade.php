@@ -144,7 +144,7 @@
 {{--                <span>Лицензии</span></a>--}}
 {{--        </li>--}}
         <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.feedback')}}">
+            <a class="nav-link" href="{{route('admin.reviews')}}">
                 <i class="fas fa-fw fa-comment-o"></i>
                 <span>Отзывы</span></a>
         </li>

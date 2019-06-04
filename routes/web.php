@@ -21,6 +21,7 @@ Route::group(['prefix' => '/','middleware' => ['mainInfo']], function () {
     Auth::routes();
     Route::get('/', 'MainController@index')->name('main');
 
+
 //Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/about-us', 'MainController@about')->name('about');
 
@@ -31,12 +32,14 @@ Route::group(['prefix' => '/','middleware' => ['mainInfo']], function () {
     Route::get('/services/{code}', 'MainController@servicesElement')->name('services.element');
     Route::get('/contacts', 'MainController@contacts')->name('contacts');
 
+    Route::get('/reviews', 'ReviewsController@index')->name('reviews');
+    Route::post('/reviews/add', 'ReviewsController@add')->name('reviews.add');
+
 });
 //Route::group(['prefix' => 'admin','namespace' => 'Admin'], function () {
 //    // Маршруты аутентификации...
 //    Route::get('/login', 'Auth\LoginController@showLoginForm');
 //    Route::post('/login', 'Auth\LoginController@login');
-//    Route::get('/logout', 'Auth\LoginController@logout');
 //
 //    // Маршруты регистрации...
 ////    Route::get('/register', 'Auth\AuthController@getRegister');
@@ -81,7 +84,8 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin', 'middleware' => ['auth
     Route::get('/doctors/delete/{id}', 'AdminController@doctorDelete');
 
     Route::get('/gallery', 'AdminController@gallery')->name('admin.gallery');
-    Route::get('/feedback', 'AdminController@feedback')->name('admin.feedback');
+    Route::get('/reviews', 'ReviewsController@index')->name('admin.reviews');
+    Route::post('/reviews/update', 'ReviewsController@update')->name('admin.reviews.update');
     Route::get('/licenses', 'AdminController@licenses')->name('admin.licenses');
 
 });

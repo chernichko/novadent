@@ -91,11 +91,6 @@ $('.services_form button').on('click', function(){
         error = false;
     }
 
-    // if( !$('.news_form #newsDescription').val() ){
-    //     $('.news_form #newsDescription').addClass('error');
-    //     error = false;
-    // }
-
     if(error){
         $('.services_form').submit();
     }
@@ -129,4 +124,30 @@ $('.upload-lisences-btn').on('click', function(){
     var file_data = $('.add-lisences-form_input').prop('files');
     var form_data = new FormData();
     form_data.append('file', file_data);
+})
+
+$(".js-update-review").on('click', function(){
+
+    var status = 0;
+
+    if ($(this).is(':checked')){
+        status = 1 ;
+    }
+
+    var id = $(this).data("id");
+    var CSRF_TOKEN = $("input[name='_token']").val();
+
+    $.ajax({
+        url: '/admin/reviews/update',
+        type: "POST",
+        data: {
+            id: id,
+            status: status,
+            _token: CSRF_TOKEN
+        },
+        success: function (data) {
+            location.reload();
+        },
+    });
+
 })

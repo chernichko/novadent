@@ -1,9 +1,6 @@
 @extends('layouts.admin')
 
 @section('scripts')
-    <script>
-        CKEDITOR.replace( 'serviceDescription' );
-    </script>
 
 @endsection
 
