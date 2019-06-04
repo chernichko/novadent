@@ -49,8 +49,10 @@ class MainController extends Controller
     public function newsElement($code)
     {
         $data = News::where(['code'=>$code])->first();
-
-//        dd($data);
+        $prev = News::where(['id ', '>' , $data->id])->get()->all();
+//        $next = News::where(['code'=>$code])->first();
+//
+        dd($prev);
 
         return view('news.element',['news'=>$data]);
     }

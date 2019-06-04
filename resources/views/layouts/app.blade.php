@@ -74,7 +74,7 @@
                                         <li class="nav-item"><a href="/services" class="nav-link">Услуги и цены</a></li>
                                         <li class="nav-item"><a href="/news" class="nav-link">Новости</a></li>
                                         <li class="nav-item"><a href="/gallery" class="nav-link">Галлерея</a></li>
-                                        <li class="nav-item"><a href="#" class="nav-link">Отзывы</a></li>
+                                        <li class="nav-item"><a href="/reviews" class="nav-link">Отзывы</a></li>
                                         <li class="nav-item"><a href="/contacts" class="nav-link">Контакты</a></li>
                                     </ul>
 
@@ -174,12 +174,12 @@
                     <div class="col-xs-12 col-sm-2 my-4">
                         <h5>Меню</h5>
                         <ul class="footer_menu">
-                            <li><a href="#" class="footer_menu_link">О нас</a></li>
-                            <li><a href="#" class="footer_menu_link">Услуги и цены</a></li>
-                            <li><a href="#" class="footer_menu_link">Новости</a></li>
-                            <li><a href="#" class="footer_menu_link">Галлерея</a></li>
-                            <li><a href="#" class="footer_menu_link">Отзывы</a></li>
-                            <li><a href="#" class="footer_menu_link">Контакты</a></li>
+                            <li><a href="/about-us" class="footer_menu_link">О нас</a></li>
+                            <li><a href="/services" class="footer_menu_link">Услуги и цены</a></li>
+                            <li><a href="/news" class="footer_menu_link">Новости</a></li>
+                            <li><a href="/gallery" class="footer_menu_link">Галлерея</a></li>
+                            <li><a href="/reviews" class="footer_menu_link">Отзывы</a></li>
+                            <li><a href="/contacts" class="footer_menu_link">Контакты</a></li>
                         </ul>
                     </div>
                     <div class="col-xs-12 col-sm-4 my-4">

@@ -372,6 +372,49 @@ li.list-group-item {
   //border: 1px solid #ececec;
 }
 
+//отзывы
+
+.reviews{
+  &-form{
+
+  }
+
+  &-textarea,
+  &-name,
+  &-phone {
+    width: 100%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+  &-button{
+
+  }
+
+  &-list{
+
+    margin-top: 15px;
+    border-top: 1px solid #ececec;
+    padding-top: 15px;
+
+    &-element{
+
+    }
+  }
+
+  &-element-name{
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+  }
+
+  &-element-text{
+    margin-top: 2px;
+  }
+
+}
+
 .footer{
   height: auto;
   background: #556567;

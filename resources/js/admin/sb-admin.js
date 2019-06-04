@@ -1,6 +1,6 @@
 require('../bootstrap');
 require('./scripts');
-require('ckeditor');
+// require('ckeditor');
 
 (function($) {
   "use strict"; // Start of use strict
