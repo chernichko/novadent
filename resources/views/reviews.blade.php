@@ -50,7 +50,7 @@
     <!-- Modal -->
     <div class="modal fade" id="ReviewForm" tabindex="-1" role="dialog" aria-labelledby="ReviewFormLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            {{--<div class="modal-content">--}}
+            <div class="modal-content">
             <div class="header_feedback_modal">
                 {{--<div class="modal-body">--}}
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -71,7 +71,7 @@
                     </div>
                     <input type="button" class="reviews-button btn btn-success" value="Отправить отзыв">
                 </div>
-                {{--</div>--}}
+                </div>
             </div>
         </div>
     </div>

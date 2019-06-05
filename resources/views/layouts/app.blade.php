@@ -216,7 +216,7 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        {{--<div class="modal-content">--}}
+        <div class="modal-content">
         <div class="header_feedback_modal">
             {{--<div class="modal-body">--}}
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -232,7 +232,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Записаться</button>
                 </form>
-            {{--</div>--}}
+            </div>
         </div>
     </div>
 </div>
