@@ -5,7 +5,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('main')}}">Главная</a></li>
-                <li class="breadcrumb-item">Отзывы</li>
+                <li class="breadcrumb-item">Галлерея</li>
             </ol>
         </nav>
     </div>
@@ -18,6 +18,8 @@
         <h1>Галлерея</h1>
 
         <div class="content">
+
+
 
 
 

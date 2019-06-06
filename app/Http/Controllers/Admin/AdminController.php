@@ -243,10 +243,6 @@ class AdminController extends Controller
         return view('admin.doctors.edit',['doctor'=>$doctor]);
     }
 
-    public function gallery(){
-        return view('admin.gallery');
-    }
-
     public function licenses(){
         return view('admin.licenses');
     }
