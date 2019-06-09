@@ -10,7 +10,8 @@
         <div class="col-md-8">
 
             <div class="example-2">
-                <form action="{{route('admin.gallery.save')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.gallery.save.post')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
                     <div class="form-group">
                         <input type="file" name="file[]" multiple id="file" class="input-file">
                         <label for="file" class="btn btn-tertiary js-labelFile">

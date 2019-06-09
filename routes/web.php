@@ -86,7 +86,8 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin', 'middleware' => ['auth
     Route::get('/doctors/delete/{id}', 'AdminController@doctorDelete');
 
     Route::get('/gallery', 'GalleryController@index')->name('admin.gallery');
-    Route::post('/gallery/save', 'GalleryController@save')->name('admin.gallery.save');
+    Route::get('/gallery/save', 'GalleryController@save')->name('admin.gallery.save');
+    Route::post('/gallery/save', 'GalleryController@save')->name('admin.gallery.save.post');
 
     Route::get('/reviews', 'ReviewsController@index')->name('admin.reviews');
     Route::post('/reviews/update', 'ReviewsController@update')->name('admin.reviews.update');
