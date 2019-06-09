@@ -21,7 +21,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" name="save" class="btn btn-success" value="Загрузить">
+                        <input type="submit" name="save" class="btn btn-success btn-tertiary" value="Загрузить">
                     </div>
                 </form>
             </div>

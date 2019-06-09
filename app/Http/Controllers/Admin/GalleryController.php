@@ -38,7 +38,7 @@ class GalleryController extends Controller
 
         }
 
-        return view('admin.gallery');
+        return redirect()->route('admin.gallery');
     }
 
 }
