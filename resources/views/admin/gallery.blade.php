@@ -26,6 +26,19 @@
                 </form>
             </div>
 
+            <div class="gallery-list">
+
+            @if(!empty($gallery))
+
+                @foreach($gallery as $file)
+                    <div class="gallery-element">
+                        <img src="{{URL::asset('/storage/files/gallery/' . $file->path)}}">
+                    </div>
+                @endforeach
+
+            @endif
+
+            </div>
         </div>
     </div>
 </div>

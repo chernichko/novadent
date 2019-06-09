@@ -27,7 +27,9 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        return view('admin.gallery');
+        $gallery = Gallery::all();
+
+        return view('admin.gallery', ['gallery' => $gallery]);
     }
 
     public function save(Request $request)
