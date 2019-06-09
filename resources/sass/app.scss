@@ -319,11 +319,11 @@ h3{
   }
 }
 
-  @media (max-width: 855px) {
-    .desctop-header{
-      display:none;
-    }
+@media (max-width: 855px) {
+  .desctop-header{
+    display:none;
   }
+}
 
 @media (max-width: 540px) {
 
@@ -495,6 +495,39 @@ li.list-group-item {
   }
 }
 
-.gallery img{
-  max-width:150px;
+.gallery{
+
+  &-block{
+
+    height: auto;
+    overflow: auto;
+
+  }
+
+  &-block-element{
+
+    width:33%;
+    float:left;
+    text-align:center;
+    margin-bottom:15px;
+
+    img{
+      max-height:150px;
+      width:auto;
+    }
+
+  }
+}
+
+@media (max-width: 855px) {
+  .gallery {
+
+    &-block-element {
+      width:100%;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+
 }

@@ -19,8 +19,15 @@
 
         <div class="content">
 
-
-
+            <div class="gallery-block">
+                @if(!empty($gallery))
+                    @foreach($gallery as $photo)
+                        <div class="gallery-block-element">
+                            <img src="{{URL::asset('/storage/files/gallery/' . $photo->path)}}">
+                        </div>
+                    @endforeach
+                @endif
+            </div>
 
 
         </div>
