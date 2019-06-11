@@ -23,7 +23,9 @@
                 @if(!empty($gallery))
                     @foreach($gallery as $photo)
                         <div class="gallery-block-element">
-                            <img src="{{URL::asset('/storage/files/gallery/' . $photo->path)}}">
+                            <a href="{{URL::asset('/storage/files/gallery/' . $photo->path)}}" data-lightbox="roadtrip">
+                                <img src="{{URL::asset('/storage/files/gallery/' . $photo->path)}}">
+                            </a>
                         </div>
                     @endforeach
                 @endif
