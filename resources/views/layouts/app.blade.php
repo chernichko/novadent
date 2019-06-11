@@ -25,7 +25,7 @@
             <div class="row desctop-header">
                 <div class="col-xs-12 col-md-3 header_logo">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="{{asset('storage/header_logo.png')}}">
+                        <img src="{{asset('header_logo.png')}}">
                     </a>
                 </div>
 
@@ -169,7 +169,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-3 my-4 footer_logo">
-                        <img src="{{URL::asset('/storage/footer_logo.png')}}">
+                        <img src="{{asset('footer_logo.png')}}">
                     </div>
                     <div class="col-xs-12 col-sm-2 my-4">
                         <h5>Меню</h5>
