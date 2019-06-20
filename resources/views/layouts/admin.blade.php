@@ -208,8 +208,26 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+{{--<script src="../vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>--}}
+{{--<script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>--}}
+{{--<script>--}}
+{{--    $('textarea').ckeditor();--}}
+{{--</script>--}}
+
+<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+<script>
+    var options = {
+        filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+        filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+        filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+    };
+
+    CKEDITOR.replace( 'textarea' , options );
+</script>
 
 <!-- Core plugin JavaScript-->
 {{--<script src="vendor/jquery-easing/jquery.easing.min.js"></script>--}}

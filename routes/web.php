@@ -93,4 +93,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin', 'middleware' => ['auth
     Route::post('/reviews/update', 'ReviewsController@update')->name('admin.reviews.update');
     Route::get('/licenses', 'AdminController@licenses')->name('admin.licenses');
 
+    Route::get('/laravel-filemanager', '\UniSharp\LaravelFilemanager\Controllers\LfmController@show');
+    Route::post('/laravel-filemanager/upload', '\UniSharp\LaravelFilemanager\Controllers\UploadController@upload');
+
 });
