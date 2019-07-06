@@ -43,7 +43,7 @@ $(".save-price-js").on('click', function(){
                _token: CSRF_TOKEN},
         success: function (data) {
             // console.log(data);
-            //location.reload();
+            location.reload();
         },
     });
 
