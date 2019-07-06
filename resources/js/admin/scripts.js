@@ -20,6 +20,7 @@ $(".save-price-js").on('click', function(){
     rows.each(function (index, value){
         var tmp = {};
 
+        tmp.code = $(this).find('input[name=code]').val();
         tmp.name = $(this).find('input[name=name]').val();
         tmp.price = $(this).find('input[name=price]').val();
         tmp.id = $(this).find('input[name=service_id]').val();
@@ -35,14 +36,14 @@ $(".save-price-js").on('click', function(){
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
     $.ajax({
-        url: '/admin/prices',
+        url: '/admin/prices/save',
         type: "POST",
         data: {data: arr_prices,
                service: id_serv,
                _token: CSRF_TOKEN},
         success: function (data) {
             // console.log(data);
-            location.reload();
+            //location.reload();
         },
     });
 

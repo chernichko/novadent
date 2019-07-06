@@ -8,7 +8,7 @@ class Prices extends Model
 {
     protected $table = 'services';
 
-    protected $fillable = ['name','price','service_group_id','updated_at'];
+    protected $fillable = ['name','price','code','service_group_id','updated_at'];
 
     protected $hidden = ['created_at'];
 
@@ -24,9 +24,15 @@ class Prices extends Model
 
         $price->name = $data->name;
         $price->price = $data->price;
+        $price->code = $data->code;
         $price->service_group_id = $srv_group;
 
         $price->save();
+
+//        echo '<pre>';
+//        var_dump($price);
+//        var_dump($price->save());
+//        echo '</pre>';
     }
 
     public static function deletePrice($id){

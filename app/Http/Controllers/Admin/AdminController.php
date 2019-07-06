@@ -184,7 +184,7 @@ class AdminController extends Controller
         return redirect()->route('admin.pages');
     }
 
-    public function prices(Request $request)
+    /*public function prices(Request $request)
     {
         if($request->isMethod('post')) {
 
@@ -211,7 +211,7 @@ class AdminController extends Controller
         }
 
         return view('admin.prices',['services'=>$list_service, 'price'=>$prices]);
-    }
+    }*/
 
     public function doctors(){
         $list_doctors = Doctors::all();

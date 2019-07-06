@@ -68,8 +68,8 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin', 'middleware' => ['auth
     Route::post('/services/edit/{id}', 'AdminController@serviceEdit');
     Route::get('/services/delete/{id}', 'AdminController@serviceDelete');
 
-    Route::get('/prices', 'AdminController@prices')->name('admin.prices');
-    Route::post('/prices', 'AdminController@prices')->name('admin.prices.post');
+    Route::get('/prices', 'PricesController@index')->name('admin.prices');
+    Route::post('/prices/save', 'PricesController@save')->name('admin.prices.post');
 
     Route::get('/pages', 'AdminController@pages')->name('admin.pages');
     Route::get('/pages/create', 'AdminController@pageCreate')->name('admin.pages.create');
