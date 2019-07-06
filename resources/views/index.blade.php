@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('metaData')
+    <title>Стоматология Новадент в Волгограде</title>
+    <meta name="description" content="Стоматология Новадент в Волгограде">
+@endsection
+
 @section('breadcrumbs')
     <div class="front_image">
         <img src="{{URL::asset('/files/water-logo.png')}}">

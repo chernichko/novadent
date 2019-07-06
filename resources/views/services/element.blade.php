@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('metaData')
+    <title>{{$service['meta_title']}}</title>
+    <meta name="description" content="{{$service['meta_description']}}">
+@endsection
+
 @section('breadcrumbs')
     <div class="container">
         <nav aria-label="breadcrumb">

@@ -1,11 +1,16 @@
 @extends('layouts.app')
 
+@section('metaData')
+    <title>Услуги | Стоматология Новадент в Волгограде</title>
+    <meta name="description" content="Услуги стоматологии Новадент в Волгограде">
+@endsection
+
 @section('breadcrumbs')
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('main')}}">Главная</a></li>
-                <li class="breadcrumb-item">Услуги и цены</li>
+                <li class="breadcrumb-item">Услуги</li>
             </ol>
         </nav>
     </div>

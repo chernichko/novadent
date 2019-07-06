@@ -44,6 +44,18 @@
                     <label class="form-check-label" for="serviceActive">Опубликовано</label>
                 </div>
 
+                <hr>
+
+                <div class="form-group">
+                    <label for="serviceMetaTitle">Мета-заголовок</label>
+                    <input type="text" name="metatitle" class="form-control" value="{{$service->meta_title}}" id="serviceMetaTitle">
+                </div>
+
+                <div class="form-group">
+                    <label for="serviceMetaDescription">Мета-описание</label>
+                    <input type="text" name="metadescription" class="form-control" value="{{$service->meta_description}}" id="serviceMetaDescription">
+                </div>
+
                 <div class="form-group">
                     <button type="button" class="btn btn-success">Сохранить</button>
                     <a href="/admin/services/delete/{{$service->id}}" class="btn btn-danger">Удалить</a>

@@ -45,6 +45,16 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="serviceMetaTitle">Мета-заголовок</label>
+                    <input type="text" name="metatitle" class="form-control" id="serviceMetaTitle">
+                </div>
+
+                <div class="form-group">
+                    <label for="serviceMetaDescription">Мета-описание</label>
+                    <input type="text" name="metadescription" class="form-control" id="serviceMetaDescription">
+                </div>
+
+                <div class="form-group">
                     <button type="button" class="btn btn-success">Сохранить</button>
                 </div>
             </form>
