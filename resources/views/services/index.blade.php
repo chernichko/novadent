@@ -14,6 +14,7 @@
 @section('content')
 
 <div class="container">
+    <h1>Услуги</h1>
     <div class="row justify-content-center">
     @foreach($services as $service)
         <div class="col-xs-12 col-lg-6 my-4">

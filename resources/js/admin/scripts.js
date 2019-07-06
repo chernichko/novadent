@@ -199,3 +199,17 @@ $('.input-file').each(function() {
         fileName ? $label.addClass('has-file').find('.js-fileName').html(fileName) : $label.removeClass('has-file').html(labelVal);
     });
 });
+
+var a = {"ё":"yo","й":"i","ц":"ts","у":"u","к":"k","е":"e","н":"n","г":"g","ш":"sh","щ":"sch","з":"z","х":"h","ъ":"'","ф":"f","ы":"i","в":"v","а":"a","п":"p","р":"r","о":"o","л":"l","д":"d","ж":"zh","э":"e","я":"ya","ч":"ch","с":"s","м":"m","и":"i","т":"t","ь":"'","б":"b","ю":"yu"};
+
+function transliterate(word){
+    return word.split('').map(function (char) {
+        return a[char] || char;
+    }).join("");
+}
+
+$('form input[name=code]').on('focus', function(){
+    $(this).val('');
+    var name = $('form input[name=name]').val();
+    $(this).val(transliterate(name.toLowerCase()));
+})

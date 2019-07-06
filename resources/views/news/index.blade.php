@@ -14,6 +14,7 @@
 @section('content')
 
     <div class="container">
+        <h1>Новости</h1>
 
         <ul class="list-group list-group-flush">
             @foreach($list as $new)

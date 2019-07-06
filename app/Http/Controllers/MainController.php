@@ -42,17 +42,17 @@ class MainController extends Controller
 
     public function news()
     {
-        $data = News::where(['active' => 1])->get()->all();
+        $data = News::where(['active' => 1])->get();
         return view('news.index',['list'=>$data]);
     }
 
     public function newsElement($code)
     {
         $data = News::where(['code'=>$code])->first();
-        $prev = News::where(['id ', '>' , $data->id])->get()->all();
+ //       $prev = News::where(['id ', '>' , $data->id])->get();
 //        $next = News::where(['code'=>$code])->first();
 //
-        dd($prev);
+ //       dd($prev);
 
         return view('news.element',['news'=>$data]);
     }

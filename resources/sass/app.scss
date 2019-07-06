@@ -27,6 +27,7 @@
 h3{
   //color: #ff8a3d;
   color: #86cedb;
+  padding: 15px 0;
 }
 
 .text-link{
@@ -364,6 +365,10 @@ h3{
 //страница новостей
 li.list-group-item {
   padding-left: 0;
+}
+
+li.list-group-item:first-child{
+  border:0;
 }
 
 //контакты
