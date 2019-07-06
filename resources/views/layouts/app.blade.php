@@ -71,7 +71,8 @@
                                     <!-- Left Side Of Navbar -->
                                     <ul class="navbar-nav mr-auto">
                                         <li class="nav-item"><a href="/about-us" class="nav-link">О нас</a></li>
-                                        <li class="nav-item"><a href="/services" class="nav-link">Услуги и цены</a></li>
+                                        <li class="nav-item"><a href="/services" class="nav-link">Услуги</a></li>
+                                        <li class="nav-item"><a href="/prices" class="nav-link">Цены</a></li>
                                         <li class="nav-item"><a href="/news" class="nav-link">Новости</a></li>
                                         <li class="nav-item"><a href="/gallery" class="nav-link">Галлерея</a></li>
                                         <li class="nav-item"><a href="/reviews" class="nav-link">Отзывы</a></li>
@@ -175,7 +176,8 @@
                         <h5>Меню</h5>
                         <ul class="footer_menu">
                             <li><a href="/about-us" class="footer_menu_link">О нас</a></li>
-                            <li><a href="/services" class="footer_menu_link">Услуги и цены</a></li>
+                            <li><a href="/services" class="footer_menu_link">Услуги</a></li>
+                            <li><a href="/prices" class="footer_menu_link">Цены</a></li>
                             <li><a href="/news" class="footer_menu_link">Новости</a></li>
                             <li><a href="/gallery" class="footer_menu_link">Галлерея</a></li>
                             <li><a href="/reviews" class="footer_menu_link">Отзывы</a></li>

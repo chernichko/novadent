@@ -67,27 +67,10 @@ class MainController extends Controller
     {
         $data = ServiceGroups::where(["code" => $code])->first();
         $services_list = ServiceGroups::where(["active" => 1])->get();
-        $prices_list = Prices::where(['service_group_id' => $data['id']])->get();
-
-        $price_left = [];
-        $price_right = [];
-
-        foreach ($prices_list as $key => $price){
-            if($key%2 == 0)
-                $price_left[] = $price;
-            else
-                $price_right[] = $price;
-        }
-
-        $price = [
-            'left' => $price_left,
-            'right' => $price_right
-        ];
 
         return view('services.element',[
             'service' => $data,
-            'services_list' => $services_list,
-            'price' => $price
+            'services_list' => $services_list
         ]);
     }
 

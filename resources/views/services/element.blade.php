@@ -32,34 +32,34 @@
 
             {!!htmlspecialchars_decode($service['description'])!!}
 
-            <div class="price-block">
-                <div class="row">
-                    <div class="col-xs-12 col-lg-6">
-                        <table class="table table-hover">
+{{--            <div class="price-block">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-xs-12 col-lg-6">--}}
+{{--                        <table class="table table-hover">--}}
 
-                            <tbody>
-                            @foreach($price['left'] as $val)
-                                <tr>
-                                    <td>{{$val['name']}}</td>
-                                    <td>{{$val['price']}}</td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-xs-12 col-lg-6">
-                        <table class="table table-hover">
-                            <tbody>
-                            @foreach($price['right'] as $val)
-                                <tr>
-                                    <td>{{$val['name']}}</td>
-                                    <td>{{$val['price']}}</td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-            </div>
+{{--                            <tbody>--}}
+{{--                            @foreach($price['left'] as $val)--}}
+{{--                                <tr>--}}
+{{--                                    <td>{{$val['name']}}</td>--}}
+{{--                                    <td>{{$val['price']}}</td>--}}
+{{--                                </tr>--}}
+{{--                            @endforeach--}}
+{{--                            </tbody>--}}
+{{--                        </table>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-xs-12 col-lg-6">--}}
+{{--                        <table class="table table-hover">--}}
+{{--                            <tbody>--}}
+{{--                            @foreach($price['right'] as $val)--}}
+{{--                                <tr>--}}
+{{--                                    <td>{{$val['name']}}</td>--}}
+{{--                                    <td>{{$val['price']}}</td>--}}
+{{--                                </tr>--}}
+{{--                            @endforeach--}}
+{{--                            </tbody>--}}
+{{--                        </table>--}}
+{{--                    </div>--}}
+{{--            </div>--}}
         </div>
         </div>
     </div>
