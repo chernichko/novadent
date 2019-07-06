@@ -40,7 +40,7 @@
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-right header_phone">
                             <div class="header_phone_dop">
-                                8 8442 {{$info['phone']}}
+                                {{$info['phone']}}
                             </div>
                             <div class="header_phone_dop">
                                 {{$info['phone1']}}
