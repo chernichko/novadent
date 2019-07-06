@@ -17,35 +17,69 @@ $(".save-price-js").on('click', function(){
 
     var arr_prices = [];
 
+    var error = false;
+
     rows.each(function (index, value){
         var tmp = {};
 
         tmp.code = $(this).find('input[name=code]').val();
         tmp.name = $(this).find('input[name=name]').val();
         tmp.price = $(this).find('input[name=price]').val();
-        tmp.id = $(this).find('input[name=service_id]').val();
 
-        arr_prices.push(tmp);
+        if(tmp.code == '' && tmp.name == '' && tmp.price == ''){
+            $(this).find('input[name=code]').removeClass('is-invalid');
+            $(this).find('input[name=name]').removeClass('is-invalid');
+            $(this).find('input[name=price]').removeClass('is-invalid');
+        }else{
+
+            if(tmp.code == '') {
+                $(this).find('input[name=code]').addClass('is-invalid');
+                error = true;
+            }
+
+            if(tmp.name == '') {
+                $(this).find('input[name=name]').addClass('is-invalid');
+                error = true;
+            }
+
+            if(tmp.price == '') {
+                $(this).find('input[name=price]').addClass('is-invalid');
+                error = true;
+            }
+
+            tmp.id = $(this).find('input[name=service_id]').val();
+            if(tmp.price == '') {
+                error = true;
+            }
+
+            arr_prices.push(tmp);
+
+        }
+
+        console.log(error);
+
     });
 
+    if(!error) {
 
-    arr_prices = JSON.stringify(arr_prices);
+        arr_prices = JSON.stringify(arr_prices);
 
-    console.log(arr_prices);
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
-    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-
-    $.ajax({
-        url: '/admin/prices/save',
-        type: "POST",
-        data: {data: arr_prices,
-               service: id_serv,
-               _token: CSRF_TOKEN},
-        success: function (data) {
-            // console.log(data);
-            location.reload();
-        },
-    });
+        $.ajax({
+            url: '/admin/prices/save',
+            type: "POST",
+            data: {
+                data: arr_prices,
+                service: id_serv,
+                _token: CSRF_TOKEN
+            },
+            success: function (data) {
+                // console.log(data);
+                location.reload();
+            },
+        });
+    }
 
 })
 
