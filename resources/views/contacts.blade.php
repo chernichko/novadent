@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('metaData')
+    <title>Контакты стоматология Новадент в Волгограде</title>
+{{--    <meta name="description" content="Контакты стоматология Новадент в Волгограде">--}}
+@endsection
+
 @section('breadcrumbs')
     <div class="container">
         <nav aria-label="breadcrumb">

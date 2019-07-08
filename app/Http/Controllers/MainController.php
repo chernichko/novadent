@@ -30,7 +30,19 @@ class MainController extends Controller
     {
         $data = ServiceGroups::where(["active" => 1])->get();
 
-        return view('index',['services' => $data]);
+        $about = TextPages::find(1)->where(['code'=>'about-us'])->get();
+
+//        $text = preg_replace('/(<\/p>).*/', '$1', $about[0]->description); // This is
+
+        $text = explode('</p>',$about[0]->description); // This is
+
+        $tmp = [$text[0],$text[1],$text[2]];
+
+        $about_text = implode('</p>',$tmp);
+
+//        dd($text);
+
+        return view('index',['services' => $data, 'about'=>$about_text]);
     }
 
     public function about()
