@@ -128,11 +128,11 @@
                 <a class="dropdown-item" href="{{route('admin.pages.create')}}">Добавить</a>
             </div>
         </li>
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link" href="{{route('admin.doctors')}}">--}}
-{{--                <i class="fas fa-fw fa-user-md"></i>--}}
-{{--                <span>Врачи</span></a>--}}
-{{--        </li>--}}
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.doctors')}}">
+                <i class="fas fa-fw fa-user-md"></i>
+                <span>Врачи</span></a>
+        </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.gallery')}}">
                 <i class="fas fa-fw fa-picture-o"></i>
@@ -221,9 +221,9 @@
 <script>
     var options = {
         filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-        filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+        filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
         filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'
     };
 
     CKEDITOR.replace( 'textarea' , options );

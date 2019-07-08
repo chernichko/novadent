@@ -137,7 +137,8 @@
                                 <!-- Left Side Of Navbar -->
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item"><a href="/about-us" class="nav-link">О нас</a></li>
-                                    <li class="nav-item"><a href="/services" class="nav-link">Услуги и цены</a></li>
+                                    <li class="nav-item"><a href="/services" class="nav-link">Услуги</a></li>
+                                    <li class="nav-item"><a href="/prices" class="nav-link">Цены</a></li>
                                     <li class="nav-item"><a href="/news" class="nav-link">Новости</a></li>
                                     <li class="nav-item"><a href="/gallery" class="nav-link">Галлерея</a></li>
                                     <li class="nav-item"><a href="#" class="nav-link">Отзывы</a></li>
