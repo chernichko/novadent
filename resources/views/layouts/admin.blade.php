@@ -131,7 +131,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.doctors')}}">
                 <i class="fas fa-fw fa-user-md"></i>
-                <span>Врачи</span></a>
+                <span>Сотрудники</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.gallery')}}">
