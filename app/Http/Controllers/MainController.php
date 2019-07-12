@@ -30,7 +30,19 @@ class MainController extends Controller
     {
         $data = ServiceGroups::where(["active" => 1])->get();
 
-        return view('index',['services' => $data]);
+        $about = TextPages::find(1)->where(['code'=>'about-us'])->get();
+
+//        $text = preg_replace('/(<\/p>).*/', '$1', $about[0]->description); // This is
+
+        $text = explode('</p>',$about[0]->description); // This is
+
+        $tmp = [$text[0],$text[1],$text[2]];
+
+        $about_text = implode('</p>',$tmp);
+
+//        dd($text);
+
+        return view('index',['services' => $data, 'about'=>$about_text]);
     }
 
     public function about()
@@ -42,15 +54,17 @@ class MainController extends Controller
 
     public function news()
     {
-        $data = News::where(['active' => 1])->get()->all();
+        $data = News::where(['active' => 1])->get();
         return view('news.index',['list'=>$data]);
     }
 
     public function newsElement($code)
     {
         $data = News::where(['code'=>$code])->first();
-
-//        dd($data);
+ //       $prev = News::where(['id ', '>' , $data->id])->get();
+//        $next = News::where(['code'=>$code])->first();
+//
+ //       dd($prev);
 
         return view('news.element',['news'=>$data]);
     }
@@ -65,27 +79,10 @@ class MainController extends Controller
     {
         $data = ServiceGroups::where(["code" => $code])->first();
         $services_list = ServiceGroups::where(["active" => 1])->get();
-        $prices_list = Prices::where(['service_group_id' => $data['id']])->get();
-
-        $price_left = [];
-        $price_right = [];
-
-        foreach ($prices_list as $key => $price){
-            if($key%2 == 0)
-                $price_left[] = $price;
-            else
-                $price_right[] = $price;
-        }
-
-        $price = [
-            'left' => $price_left,
-            'right' => $price_right
-        ];
 
         return view('services.element',[
             'service' => $data,
-            'services_list' => $services_list,
-            'price' => $price
+            'services_list' => $services_list
         ]);
     }
 

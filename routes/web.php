@@ -21,22 +21,32 @@ Route::group(['prefix' => '/','middleware' => ['mainInfo']], function () {
     Auth::routes();
     Route::get('/', 'MainController@index')->name('main');
 
+
 //Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/about-us', 'MainController@about')->name('about');
 
     Route::get('/news', 'MainController@news')->name('news');
     Route::get('/news/{code}', 'MainController@newsElement')->name('news.element');
 
+    Route::get('/articles', 'ArticlesController@index')->name('articles');
+    Route::get('/articles/{code}', 'ArticlesController@element')->name('articles.element');
+
+    Route::get('/prices', 'PricesController@index')->name('prices');
+
     Route::get('/services', 'MainController@services')->name('services');
     Route::get('/services/{code}', 'MainController@servicesElement')->name('services.element');
     Route::get('/contacts', 'MainController@contacts')->name('contacts');
+
+    Route::get('/reviews', 'ReviewsController@index')->name('reviews');
+    Route::post('/reviews/add', 'ReviewsController@add')->name('reviews.add');
+
+    Route::get('/gallery', 'GalleryController@index')->name('gallery');
 
 });
 //Route::group(['prefix' => 'admin','namespace' => 'Admin'], function () {
 //    // Маршруты аутентификации...
 //    Route::get('/login', 'Auth\LoginController@showLoginForm');
 //    Route::post('/login', 'Auth\LoginController@login');
-//    Route::get('/logout', 'Auth\LoginController@logout');
 //
 //    // Маршруты регистрации...
 ////    Route::get('/register', 'Auth\AuthController@getRegister');
@@ -56,6 +66,13 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin', 'middleware' => ['auth
     Route::post('/news/edit/{id}', 'AdminController@newsEdit');
     Route::get('/news/delete/{id}', 'AdminController@newsDelete');
 
+    Route::get('/article', 'ArticleController@index')->name('admin.article');
+    Route::get('/article/create', 'ArticleController@create')->name('admin.article.create');
+    Route::post('/article/create', 'ArticleController@create')->name('admin.article.create.post');
+    Route::get('/article/edit/{id}', 'ArticleController@edit');
+    Route::post('/article/edit/{id}', 'ArticleController@edit');
+    Route::get('/article/delete/{id}', 'ArticleController@delete');
+
     Route::get('/services', 'AdminController@services')->name('admin.services');
     Route::get('/services/create', 'AdminController@serviceCreate')->name('admin.service.create');
     Route::post('/services/create', 'AdminController@serviceCreate')->name('admin.service.create.post');
@@ -63,8 +80,8 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin', 'middleware' => ['auth
     Route::post('/services/edit/{id}', 'AdminController@serviceEdit');
     Route::get('/services/delete/{id}', 'AdminController@serviceDelete');
 
-    Route::get('/prices', 'AdminController@prices')->name('admin.prices');
-    Route::post('/prices', 'AdminController@prices')->name('admin.prices.post');
+    Route::get('/prices', 'PricesController@index')->name('admin.prices');
+    Route::post('/prices/save', 'PricesController@save')->name('admin.prices.post');
 
     Route::get('/pages', 'AdminController@pages')->name('admin.pages');
     Route::get('/pages/create', 'AdminController@pageCreate')->name('admin.pages.create');
@@ -80,8 +97,21 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin', 'middleware' => ['auth
     Route::post('/doctors/edit/{id}', 'AdminController@doctorEdit');
     Route::get('/doctors/delete/{id}', 'AdminController@doctorDelete');
 
-    Route::get('/gallery', 'AdminController@gallery')->name('admin.gallery');
-    Route::get('/feedback', 'AdminController@feedback')->name('admin.feedback');
+    Route::get('/gallery', 'GalleryController@index')->name('admin.gallery');
+    Route::get('/gallery/save', 'GalleryController@save')->name('admin.gallery.save');
+    Route::post('/gallery/save', 'GalleryController@save')->name('admin.gallery.save.post');
+    Route::post('/gallery/delete', 'GalleryController@delete')->name('admin.gallery.delete.post');
+
+    Route::get('/liscence', 'LiscenceController@index')->name('admin.liscence');
+    Route::get('/liscence/save', 'LiscenceController@save')->name('admin.liscence.save');
+    Route::post('/liscence/save', 'LiscenceController@save')->name('admin.liscence.save.post');
+    Route::post('/liscence/delete', 'LiscenceController@delete')->name('admin.liscence.delete.post');
+
+    Route::get('/reviews', 'ReviewsController@index')->name('admin.reviews');
+    Route::post('/reviews/update', 'ReviewsController@update')->name('admin.reviews.update');
     Route::get('/licenses', 'AdminController@licenses')->name('admin.licenses');
+
+    Route::get('/laravel-filemanager', '\UniSharp\LaravelFilemanager\Controllers\LfmController@show');
+    Route::post('/laravel-filemanager/upload', '\UniSharp\LaravelFilemanager\Controllers\UploadController@upload');
 
 });

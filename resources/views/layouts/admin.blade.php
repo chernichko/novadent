@@ -14,16 +14,6 @@
 
     <title>SB Admin - Dashboard</title>
 
-
-    <!-- Bootstrap core CSS-->
-    {{--<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">--}}
-
-    <!-- Custom fonts for this template-->
-    {{--<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">--}}
-
-    <!-- Page level plugin CSS-->
-    {{--<link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">--}}
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
@@ -114,6 +104,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.article')}}">
+                <i class="fas fa-fw fa-rub"></i>
+                <span>Статьи</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="{{route('admin.news')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Новости</span>
@@ -141,7 +137,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.doctors')}}">
                 <i class="fas fa-fw fa-user-md"></i>
-                <span>Врачи</span></a>
+                <span>Сотрудники</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.gallery')}}">
@@ -149,12 +145,12 @@
                 <span>Галлерея</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.licenses')}}">
+            <a class="nav-link" href="{{route('admin.liscence')}}">
                 <i class="fas fa-fw fa-file-text-o"></i>
                 <span>Лицензии</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.feedback')}}">
+            <a class="nav-link" href="{{route('admin.reviews')}}">
                 <i class="fas fa-fw fa-comment-o"></i>
                 <span>Отзывы</span></a>
         </li>
@@ -218,8 +214,26 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+{{--<script src="../vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>--}}
+{{--<script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>--}}
+{{--<script>--}}
+{{--    $('textarea').ckeditor();--}}
+{{--</script>--}}
+
+<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+<script>
+    var options = {
+        filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+        filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
+        filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'
+    };
+
+    CKEDITOR.replace( 'textarea' , options );
+</script>
 
 <!-- Core plugin JavaScript-->
 {{--<script src="vendor/jquery-easing/jquery.easing.min.js"></script>--}}

@@ -7,6 +7,8 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@import '~lightbox2/src/css/lightbox.css';
+
 //@import '~owl.carousel/dist/assets/owl.carousel.css';
 //@import '~lightbox2/dist/css/lightbox.min.css';
 //@import '~@fortawesome/fontawesome-free/css/all.min.css';
@@ -25,6 +27,7 @@
 h3{
   //color: #ff8a3d;
   color: #86cedb;
+  padding: 15px 0;
 }
 
 .text-link{
@@ -49,10 +52,15 @@ h3{
   }
 }
 
-.header_feedback{line-height:70px;}
+.header_feedback_block{
+  overflow: auto;
+}
+
+.header_feedback{float:left}
 .header_feedback_modal{
   background: #fff;
   padding:20px;
+  display:inline-block;
 }
 .header_feedback_modal-title{
   padding-left: 55px;
@@ -77,7 +85,13 @@ h3{
   height: 100%;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 980px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 576px) {
   .container {
     max-width: 960px;
   }
@@ -89,10 +103,19 @@ h3{
 
 .header_feedback{
 
+  margin-bottom:15px;
+  padding: 5px 10px;
+
   a {
     color: #000;
     font-size: 16px;
     border-bottom: 1px #000 dashed;
+
+    //background: #86cedb;
+    //color: #fff;
+    //font-weight: bold;
+    //padding: 5px 10px;
+    //border-radius: 5px;
 
     -webkit-text-decoration-skip: objects;
     -webkit-transition-duration: 0.3s;
@@ -102,6 +125,7 @@ h3{
 
   a:hover{
     text-decoration: none;
+    cursor:pointer;
     color:#ff8a3d;
     border-bottom: 1px #ff8a3d dashed;
   }
@@ -114,38 +138,85 @@ h3{
   line-height: 35px;
 }
 
-.header_phone_dop{
+.header_phone,.header_social{
   font-size:16px;
+  float:left;
+  padding: 0;
 }
 
-//.header_messangers{
+.header_messangers{
+
+    overflow: auto;
+
+    a {
+      display: inline-block;
+    }
+
   .messanger_tm,
   .messanger_vb,
   .messanger_wp,
   .messanger_ig{
     //border: 1px solid;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     float: right;
-    margin: 1px;
-    background: url('/files/messangers.png') no-repeat;
-    background-size: cover;
+    margin: 5px;
+    //background: url('/files/messangers.png') no-repeat;
+    //background-size: cover;
   }
 
-  .messanger_tm{
-    background-position-x:-43px;
-  }
-  .messanger_vb{
-    background-position-x:-129px;
-  }
-  .messanger_wp{
-    background-position-x:-216px;
-  }
-  .messanger_ig{
-    background-position-x:-259px;
+  //.messanger_tm{
+  //  background-position-x:-50px;
+  //}
+  //.messanger_vb{
+  //  background-position-x:-151px;
+  //}
+  //.messanger_wp{
+  //  background-position-x:-252px;
+  //}
+  //.messanger_ig{
+  //  background-position-x:-302px;
+  //}
+
+}
+
+.mobile-header{
+
+  width:100%;
+
+
+  &_logo{
+
+  width:50%;
+    text-align:center;
+    display:flex;
+
+    .navbar-brand{
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      //margin-top: 20px;
+
+      img{
+        min-width: 110px;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 250px;
+        padding: 0 25px;
+      }
+    }
+
   }
 
-//}
+  &_feedback{
+    width:50%;
+
+    div{
+      padding:0;
+    }
+
+  }
+}
 
 .main_menu{
   background: #86cedb;
@@ -160,14 +231,14 @@ h3{
     }
   }
 
-  a:first-child
-  {
-    padding-left:0!important;
-  }
-
-  .navbar-nav:first-child{
-    margin-left:0!important;
-  }
+  //a:first-child
+  //{
+  //  padding-left:0!important;
+  //}
+  //
+  //.navbar-nav:first-child{
+  //  margin-left:0!important;
+  //}
 
   .navbar-nav .nav-link{
     //font-weight:700;
@@ -206,18 +277,167 @@ h3{
 
 }
 
+@media (max-width: 540px) {
+
+  .advantages .advantages_item_block-text{
+    height: 70px;
+  }
+
+}
+
+
+
+.front_image{
+  width: 100%;
+  max-height: 550px;
+  background-image: url('/files/central-foto.png');
+  background-size: cover;
+  height: 858px;
+  background-position: center top;
+  display:flex;
+
+  img{
+    margin: auto;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 140px;
+  }
+}
+
 .form_make_appointment{
   margin: 0 auto;
   width:350px;
+  //margin-left:50%;
 }
 
 .form_feedback{
   padding:120px;
+  background-image: url('/files/zayavka.png');
+  background-position: center top;
+}
+
+@media (min-width: 855px) {
+  .mobile-header {
+    display: none;
+  }
+}
+
+@media (max-width: 855px) {
+  .desctop-header{
+    display:none;
+  }
+}
+
+@media (max-width: 540px) {
+
+  .form_make_appointment{
+    margin: 0 auto;
+    width:250px;
+  }
+
+  .form_feedback{
+    padding:60px;
+    background-position: right;
+  }
+
+  .front_image{
+    max-height: 350px;
+  }
+
+  .front_image img{
+    width:250px;
+    margin-top:60px;
+  }
+}
+
+//страница цен
+
+.prices-block{
+
+  margin-top:25px;
+
+  h3{
+    padding: 10px 0;
+  }
+
+}
+
+//страница новостей
+li.list-group-item {
+  padding-left: 0;
+}
+
+li.list-group-item:first-child{
+  border:0;
+}
+
+//контакты
+
+
+.contacts {
+
+  h2{
+    display:block;
+    margin: 0;
+    padding: 0;
+  }
+
+  p{
+    padding:0;
+    margin:0;
+  }
+  //font-size: 20px;
+  //text-align: center;
+  //border: 1px solid #ececec;
+}
+
+//отзывы
+
+.reviews{
+  &-form{
+
+  }
+
+  &-textarea,
+  &-name,
+  &-phone {
+    width: 100%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+  &-button{
+
+  }
+
+  &-list{
+
+    margin-top: 15px;
+    border-top: 1px solid #ececec;
+    padding-top: 15px;
+
+    &-element{
+
+    }
+  }
+
+  &-element-name{
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+  }
+
+  &-element-text{
+    margin-top: 2px;
+  }
+
 }
 
 .footer{
   height: auto;
   background: #556567;
+  margin-top:35px;
 }
 
 .footer h5{
@@ -249,7 +469,7 @@ h3{
   text-align: right;
 
   .footer_phone_main{
-    font-size: 35px;
+    font-size: 23px;
     font-weight: bold;
   }
 
@@ -257,22 +477,22 @@ h3{
     font-size:16px;
   }
 
-  //.footer_messangers{
-  //  .messanger_tm,
-  //  .messanger_vb,
-  //  .messanger_wp,
-  //  .messanger_ig{
-  //    border: 1px solid;
-  //    width: 30px;
-  //    height: 30px;
-  //    float: right;
-  //    margin: 1px;
+  .footer_messangers{
+    .messanger_tm,
+    .messanger_vb,
+    .messanger_wp,
+    .messanger_ig{
+      //border: 1px solid;
+      width: 35px;
+      height: 35px;
+      float: right;
+      margin: 5px;
   //    background: url('/files/messangers.png') no-repeat;
-  //  }
+    }
   //
   //  .messanger_tm{
   //    background-position: 0 0;
-  //  }
+    }
 
   //}
 }
@@ -294,6 +514,39 @@ h3{
   }
 }
 
-.gallery img{
-  max-width:150px;
+.gallery{
+
+  &-block{
+
+    height: auto;
+    overflow: auto;
+
+  }
+
+  &-block-element{
+
+    width:33%;
+    float:left;
+    text-align:center;
+    margin-bottom:15px;
+
+    img{
+      max-height:150px;
+      width:auto;
+    }
+
+  }
+}
+
+@media (max-width: 855px) {
+  .gallery {
+
+    &-block-element {
+      width:100%;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+
 }

@@ -17,34 +17,69 @@ $(".save-price-js").on('click', function(){
 
     var arr_prices = [];
 
+    var error = false;
+
     rows.each(function (index, value){
         var tmp = {};
 
+        tmp.code = $(this).find('input[name=code]').val();
         tmp.name = $(this).find('input[name=name]').val();
         tmp.price = $(this).find('input[name=price]').val();
-        tmp.id = $(this).find('input[name=service_id]').val();
 
-        arr_prices.push(tmp);
+        if(tmp.code == '' && tmp.name == '' && tmp.price == ''){
+            $(this).find('input[name=code]').removeClass('is-invalid');
+            $(this).find('input[name=name]').removeClass('is-invalid');
+            $(this).find('input[name=price]').removeClass('is-invalid');
+        }else{
+
+            if(tmp.code == '') {
+                $(this).find('input[name=code]').addClass('is-invalid');
+                error = true;
+            }
+
+            if(tmp.name == '') {
+                $(this).find('input[name=name]').addClass('is-invalid');
+                error = true;
+            }
+
+            if(tmp.price == '') {
+                $(this).find('input[name=price]').addClass('is-invalid');
+                error = true;
+            }
+
+            tmp.id = $(this).find('input[name=service_id]').val();
+            if(tmp.price == '') {
+                error = true;
+            }
+
+            arr_prices.push(tmp);
+
+        }
+
+        console.log(error);
+
     });
 
+    if(!error) {
 
-    arr_prices = JSON.stringify(arr_prices);
+        arr_prices = JSON.stringify(arr_prices);
 
-    console.log(arr_prices);
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
-    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-
-    $.ajax({
-        url: '/admin/prices',
-        type: "POST",
-        data: {data: arr_prices,
-               service: id_serv,
-               _token: CSRF_TOKEN},
-        success: function (data) {
-            // console.log(data);
-            location.reload();
-        },
-    });
+        $.ajax({
+            url: '/admin/prices/save',
+            type: "POST",
+            data: {
+                data: arr_prices,
+                service: id_serv,
+                _token: CSRF_TOKEN
+            },
+            success: function (data) {
+                // console.log(data);
+                location.reload();
+            },
+        });
+    }
 
 })
 
@@ -91,11 +126,6 @@ $('.services_form button').on('click', function(){
         error = false;
     }
 
-    // if( !$('.news_form #newsDescription').val() ){
-    //     $('.news_form #newsDescription').addClass('error');
-    //     error = false;
-    // }
-
     if(error){
         $('.services_form').submit();
     }
@@ -129,4 +159,57 @@ $('.upload-lisences-btn').on('click', function(){
     var file_data = $('.add-lisences-form_input').prop('files');
     var form_data = new FormData();
     form_data.append('file', file_data);
+})
+
+$(".js-update-review").on('click', function(){
+
+    var status = 0;
+
+    if ($(this).is(':checked')){
+        status = 1 ;
+    }
+
+    var id = $(this).data("id");
+    var CSRF_TOKEN = $("input[name='_token']").val();
+
+    $.ajax({
+        url: '/admin/reviews/update',
+        type: "POST",
+        data: {
+            id: id,
+            status: status,
+            _token: CSRF_TOKEN
+        },
+        success: function (data) {
+            location.reload();
+        },
+    });
+
+})
+
+
+$('.input-file').each(function() {
+    var $input = $(this),
+        $label = $input.next('.js-labelFile'),
+        labelVal = $label.html();
+
+    $input.on('change', function(element) {
+        var fileName = '';
+        if (element.target.value) fileName = element.target.value.split('\\').pop();
+        fileName ? $label.addClass('has-file').find('.js-fileName').html(fileName) : $label.removeClass('has-file').html(labelVal);
+    });
+});
+
+var a = {" ":"-","ё":"yo","й":"i","ц":"ts","у":"u","к":"k","е":"e","н":"n","г":"g","ш":"sh","щ":"sch","з":"z","х":"h","ъ":"'","ф":"f","ы":"i","в":"v","а":"a","п":"p","р":"r","о":"o","л":"l","д":"d","ж":"zh","э":"e","я":"ya","ч":"ch","с":"s","м":"m","и":"i","т":"t","ь":"'","б":"b","ю":"yu"};
+
+function transliterate(word){
+    return word.split('').map(function (char) {
+        return a[char] || char;
+    }).join("");
+}
+
+$('form input[name=code]').on('focus', function(){
+    $(this).val('');
+    var name = $('form input[name=name]').val();
+    $(this).val(transliterate(name.toLowerCase()));
 })

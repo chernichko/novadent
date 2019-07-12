@@ -21,4 +21,10 @@ const app = new Vue({
     el: '#app'
 });*/
 
+require('lightbox2');
 require('./scripts');
+
+lightbox.option({
+    'resizeDuration': 200,
+    'wrapAround': true
+});

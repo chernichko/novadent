@@ -7,7 +7,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
 
             @foreach($services as $service)
 
@@ -17,7 +17,10 @@
                 <div class="card-body">
 
                     <div class="row mb-2">
-                        <div class="col-md-9">
+                        <div class="col-md-3">
+                            Код услуги
+                        </div>
+                        <div class="col-md-6">
                             Название
                         </div>
                         <div class="col-md-3">
@@ -31,7 +34,10 @@
 
                             @foreach($price[$service->id] as $value)
                                 <div class="row mb-2">
-                                    <div class="col col-md-9">
+                                    <div class="col col-md-3">
+                                        <input type="text" class="form-control form-control-sm" name="code" value="{{$value->code}}">
+                                    </div>
+                                    <div class="col col-md-6">
                                         <input type="text" class="form-control form-control-sm" name="name" value="{{$value->name}}">
                                     </div>
                                     <div class="col col-md-3">
@@ -43,7 +49,10 @@
                         @endif
 
                             <div class="row mb-2">
-                                <div class="col col-md-9">
+                                <div class="col col-md-3">
+                                    <input type="text" class="form-control form-control-sm" name="code">
+                                </div>
+                                <div class="col col-md-6">
                                     <input type="text" class="form-control form-control-sm" name="name">
                                 </div>
                                 <div class="col col-md-3">

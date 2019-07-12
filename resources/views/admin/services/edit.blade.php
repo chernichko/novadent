@@ -2,9 +2,8 @@
 
 @section('scripts')
     <script>
-        CKEDITOR.replace( 'serviceDescription' );
+        var editor = CKEDITOR.replace( 'serviceDescription' );
     </script>
-
 @endsection
 
 @section('title')
@@ -43,6 +42,18 @@
                 <div class="form-group form-check">
                     <input type="checkbox" name="active" value="1" class="form-check-input" id="serviceActive" @php print($service->active ? 'checked' : '') @endphp>
                     <label class="form-check-label" for="serviceActive">Опубликовано</label>
+                </div>
+
+                <hr>
+
+                <div class="form-group">
+                    <label for="serviceMetaTitle">Мета-заголовок</label>
+                    <input type="text" name="metatitle" class="form-control" value="{{$service->meta_title}}" id="serviceMetaTitle">
+                </div>
+
+                <div class="form-group">
+                    <label for="serviceMetaDescription">Мета-описание</label>
+                    <input type="text" name="metadescription" class="form-control" value="{{$service->meta_description}}" id="serviceMetaDescription">
                 </div>
 
                 <div class="form-group">

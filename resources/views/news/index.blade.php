@@ -1,13 +1,20 @@
 @extends('layouts.app')
 
 @section('breadcrumbs')
-    <li class="breadcrumb-item"><a href="{{route('main')}}">Главная</a></li>
-    <li class="breadcrumb-item">Новости</li>
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{route('main')}}">Главная</a></li>
+                <li class="breadcrumb-item">Новости</li>
+            </ol>
+        </nav>
+    </div>
 @endsection
 
 @section('content')
 
     <div class="container">
+        <h1>Новости</h1>
 
         <ul class="list-group list-group-flush">
             @foreach($list as $new)
