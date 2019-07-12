@@ -28,6 +28,9 @@ Route::group(['prefix' => '/','middleware' => ['mainInfo']], function () {
     Route::get('/news', 'MainController@news')->name('news');
     Route::get('/news/{code}', 'MainController@newsElement')->name('news.element');
 
+    Route::get('/articles', 'ArticlesController@index')->name('articles');
+    Route::get('/articles/{code}', 'ArticlesController@element')->name('articles.element');
+
     Route::get('/prices', 'PricesController@index')->name('prices');
 
     Route::get('/services', 'MainController@services')->name('services');
