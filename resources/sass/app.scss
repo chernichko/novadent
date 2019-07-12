@@ -28,6 +28,7 @@ h3{
   //color: #ff8a3d;
   color: #86cedb;
   padding: 15px 0;
+  font-weight: bolder;
 }
 
 .text-link{
@@ -513,6 +514,8 @@ li.list-group-item:first-child{
   &_spec{
     padding-left: 60px;
     margin-bottom: 10px;
+    color: #999;
+    font-weight: bold;
   }
   &_stage{
     padding-left: 60px;
