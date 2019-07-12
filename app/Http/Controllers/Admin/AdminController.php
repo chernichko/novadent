@@ -184,35 +184,6 @@ class AdminController extends Controller
         return redirect()->route('admin.pages');
     }
 
-    /*public function prices(Request $request)
-    {
-        if($request->isMethod('post')) {
-
-            $post = $request->all();
-
-            $pod_services = \GuzzleHttp\json_decode($post['data']);
-
-            foreach ($pod_services as $item){
-                if(!empty($item->name) && !empty($item->price))
-                    Prices::savePrice($item,$post['service']);
-                else
-                    Prices::deletePrice($item->id);
-            }
-        }
-
-        $list_service = ServiceGroups::all();
-
-        $prices = [];
-
-        foreach ($list_service as $group){
-
-            $prices_tmp = Prices::where(['service_group_id' => $group['id']])->get();
-            $prices[$group['id']] = $prices_tmp;
-        }
-
-        return view('admin.prices',['services'=>$list_service, 'price'=>$prices]);
-    }*/
-
     public function doctors(){
         $list_doctors = Doctors::all();
         return view('admin.doctors.index',['listDoctors'=>$list_doctors]);
@@ -241,10 +212,6 @@ class AdminController extends Controller
         $doctor = Doctors::where(['id'=>$id])->first();
 
         return view('admin.doctors.edit',['doctor'=>$doctor]);
-    }
-
-    public function licenses(){
-        return view('admin.licenses');
     }
 
     public function feedback(){

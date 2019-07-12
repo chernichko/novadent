@@ -63,6 +63,13 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin', 'middleware' => ['auth
     Route::post('/news/edit/{id}', 'AdminController@newsEdit');
     Route::get('/news/delete/{id}', 'AdminController@newsDelete');
 
+    Route::get('/article', 'ArticleController@index')->name('admin.article');
+    Route::get('/article/create', 'ArticleController@create')->name('admin.article.create');
+    Route::post('/article/create', 'ArticleController@create')->name('admin.article.create.post');
+    Route::get('/article/edit/{id}', 'ArticleController@edit');
+    Route::post('/article/edit/{id}', 'ArticleController@edit');
+    Route::get('/article/delete/{id}', 'ArticleController@delete');
+
     Route::get('/services', 'AdminController@services')->name('admin.services');
     Route::get('/services/create', 'AdminController@serviceCreate')->name('admin.service.create');
     Route::post('/services/create', 'AdminController@serviceCreate')->name('admin.service.create.post');
@@ -91,6 +98,11 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin', 'middleware' => ['auth
     Route::get('/gallery/save', 'GalleryController@save')->name('admin.gallery.save');
     Route::post('/gallery/save', 'GalleryController@save')->name('admin.gallery.save.post');
     Route::post('/gallery/delete', 'GalleryController@delete')->name('admin.gallery.delete.post');
+
+    Route::get('/liscence', 'LiscenceController@index')->name('admin.liscence');
+    Route::get('/liscence/save', 'LiscenceController@save')->name('admin.liscence.save');
+    Route::post('/liscence/save', 'LiscenceController@save')->name('admin.liscence.save.post');
+    Route::post('/liscence/delete', 'LiscenceController@delete')->name('admin.liscence.delete.post');
 
     Route::get('/reviews', 'ReviewsController@index')->name('admin.reviews');
     Route::post('/reviews/update', 'ReviewsController@update')->name('admin.reviews.update');

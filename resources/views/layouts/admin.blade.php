@@ -138,11 +138,11 @@
                 <i class="fas fa-fw fa-picture-o"></i>
                 <span>Галлерея</span></a>
         </li>
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link" href="{{route('admin.licenses')}}">--}}
-{{--                <i class="fas fa-fw fa-file-text-o"></i>--}}
-{{--                <span>Лицензии</span></a>--}}
-{{--        </li>--}}
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.liscence')}}">
+                <i class="fas fa-fw fa-file-text-o"></i>
+                <span>Лицензии</span></a>
+        </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.reviews')}}">
                 <i class="fas fa-fw fa-comment-o"></i>
