@@ -15,9 +15,8 @@
 @section('content')
 
     <div class="container">
-        <h1>Новости</h1>
 
-        <h3>{{$news['name']}}</h3>
+        <h1>{{$news['name']}}</h1>
 
         <p>{{$news['created_at']}}</p>
 
