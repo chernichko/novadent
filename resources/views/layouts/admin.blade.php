@@ -104,6 +104,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.article')}}">
+                <i class="fas fa-fw fa-rub"></i>
+                <span>Статьи</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="{{route('admin.news')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Новости</span>
