@@ -62,7 +62,7 @@ class ArticleController extends Controller
     {
         if($request->isMethod('post')) {
 
-            Article::saveNews($request);
+            Article::saveArticle($request);
         }
 
         $article = Article::where(['id'=>$id])->first();
