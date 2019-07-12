@@ -7,7 +7,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
 
             <div class="example-2">
                 <form action="{{route('admin.gallery.save.post')}}" method="post" enctype="multipart/form-data">
@@ -28,15 +28,29 @@
 
             <div class="gallery-list">
 
-            @if(!empty($gallery))
+                <form method="post" action="{{route('admin.gallery.delete.post')}}" name="galleryImageDel">
+                    {{ csrf_field() }}
+                    <div class="form-group gallery-list-block">
 
-                @foreach($gallery as $file)
-                    <div class="gallery-element">
-                        <img src="{{URL::asset('/storage/files/gallery/' . $file->path)}}">
+                    @if(!empty($gallery))
+
+                        @foreach($gallery as $file)
+                            <div class="gallery-element">
+                                <img src="{{URL::asset('/storage/files/gallery/' . $file->path)}}">
+                                <p class="gallery-element-del">
+                                    <input type="checkbox" name="delete_img[]" value="{{$file->id}}">Удалить</p>
+                            </div>
+                        @endforeach
+
+                    @endif
+
                     </div>
-                @endforeach
 
-            @endif
+                    <div class="form-group">
+                        <input type="submit" name="save-image-del" class="btn btn-success btn-tertiary" value="Сохранить">
+                    </div>
+
+                </form>
 
             </div>
         </div>

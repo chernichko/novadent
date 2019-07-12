@@ -34,9 +34,23 @@ class GalleryController extends Controller
 
     public function save(Request $request)
     {
+
         if ($request->hasFile('file')) {
 
             Gallery::saveGallery($request);
+
+        }
+
+        return redirect()->route('admin.gallery');
+    }
+
+
+
+    public function delete(Request $request)
+    {
+        if ($data = $request->all()) {
+
+            Gallery::delGallery($data);
 
         }
 
