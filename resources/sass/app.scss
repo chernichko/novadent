@@ -497,6 +497,37 @@ li.list-group-item:first-child{
   //}
 }
 
+.aboutPage-doctors_block{
+
+}
+
+.aboutPage-doctor{
+
+  margin-bottom: 20px;
+
+  &_name{
+    font-size:1.3em;
+    font-weight: bold;
+    color: #808080;
+  }
+  &_spec{
+    padding-left: 60px;
+    margin-bottom: 10px;
+  }
+  &_stage{
+    padding-left: 60px;
+    margin-bottom: 10px;
+  }
+  &_descr{
+    padding-left: 60px;
+    margin-bottom: 10px;
+
+    p{margin:0}
+
+  }
+
+}
+
 .widget-doctor {
 
   border:1px solid #cecece;
