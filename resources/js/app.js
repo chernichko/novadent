@@ -24,7 +24,9 @@ const app = new Vue({
 require('lightbox2');
 require('./scripts');
 
-lightbox.option({
-    'resizeDuration': 200,
-    'wrapAround': true
-});
+// lightbox.option({
+//     'resizeDuration': 200,
+//     'wrapAround': true
+// });
+
+require('owl.carousel2');

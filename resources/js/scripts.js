@@ -1,3 +1,11 @@
+$(document).ready(function(){
+    $('.owl-carousel').owlCarousel({
+        loop:true, //Зацикливаем слайдер
+        items:5,
+        margin:2
+    });
+});
+
 $(".reviews-button").on('click', function(){
     var name = $(".reviews-name").val();
     var phone = $(".reviews-phone").val();

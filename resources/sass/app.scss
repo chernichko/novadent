@@ -7,7 +7,10 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-@import '~lightbox2/src/css/lightbox.css';
+@import '~lightbox2/src/css/lightbox';
+
+@import '~owl.carousel2/dist/assets/owl.carousel';
+@import '~owl.carousel2/dist/assets/owl.theme.default';
 
 //@import '~owl.carousel/dist/assets/owl.carousel.css';
 //@import '~lightbox2/dist/css/lightbox.min.css';
@@ -264,7 +267,7 @@ h3{
 
   .advantages_item_block-text{
     position: relative;
-    height: 115px;
+    height: 100px;
     text-align: center;
   }
 
@@ -274,6 +277,7 @@ h3{
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
+    line-height: 20px;
   }
 
 }
@@ -583,4 +587,18 @@ li.list-group-item:first-child{
 
 @media (max-width: 540px) {
 
+}
+
+.owl-carousel .owl-stage {
+  display: flex;
+  align-items: center;
+}
+
+.owl-carousel .owl-item img {
+  display: block;
+  max-width: 100%;
+  width: auto;
+  /* object-fit: cover; */
+  max-height: 200px;
+  margin: 0 auto;
 }

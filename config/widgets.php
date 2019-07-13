@@ -9,5 +9,6 @@ return [
 
 	'test' => 'App\Widgets\TestWidget',
 	'doctors' => 'App\Widgets\DoctorsWidget',
+	'liscence' => 'App\Widgets\LiscencesWidget',
 
 ];
