@@ -50,5 +50,7 @@
             </div>
         @endif
 
+        @widget('liscence')
+
     </div>
 @endsection
