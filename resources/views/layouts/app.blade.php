@@ -37,6 +37,8 @@
                                 Записаться на прием
                             </a>
 
+                            <div class="licesne_number-header">Лицензия ЛО-34-01-003973</div>
+
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-right header_phone">
                             <div class="header_phone_dop">
@@ -174,6 +176,8 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-3 my-4 footer_logo">
                         <img src="{{asset('storage/footer_logo.png')}}">
+
+                        <div class="licesne_number-footer">Лицензия ЛО-34-01-003973</div>
                     </div>
                     <div class="col-xs-12 col-sm-2 my-4">
 {{--                        <h5>Меню</h5>--}}
