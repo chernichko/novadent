@@ -32,8 +32,8 @@
             <div class="col-xs-12 col-sm-6 mt-3">
                 <p><b>Адрес:</b> {{$info['address']}}</p>
                 <p><b>Время работы: </b></p>
-                <p><b>По будням:</b> {{$info['worktimeWeekend']}}</p>
-                <p><b>Суббота:</b> {{$info['worktimeWeekday']}}</p>
+                <p><b>По будням:</b> {{$info['worktimeWeekday']}}</p>
+                <p><b>Суббота:</b> {{$info['worktimeWeekend']}}</p>
                 <p><b>Воскресенье:</b> выходной</p>
 
             </div>
