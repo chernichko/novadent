@@ -12,20 +12,15 @@
 @import '~owl.carousel2/dist/assets/owl.carousel';
 @import '~owl.carousel2/dist/assets/owl.theme.default';
 
-//@import '~owl.carousel/dist/assets/owl.carousel.css';
-//@import '~lightbox2/dist/css/lightbox.min.css';
-//@import '~@fortawesome/fontawesome-free/css/all.min.css';
+#app{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
-//a{
-//  color:#ff8a3d;
-//  text-decoration: none;
-//
-//  &:hover{
-//    color:#ff8a3d;
-//    text-decoration:none;
-//    border-bottom:1px solid #ff8a3d;;
-//  }
-//}
+.app-content{
+  flex:1;
+}
 
 h3{
   //color: #ff8a3d;
