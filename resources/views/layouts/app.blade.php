@@ -161,7 +161,7 @@
     </header>
 
 
-    <main class="">
+    <main class="app-content">
 
         @yield('breadcrumbs')
 
