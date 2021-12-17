@@ -13,36 +13,13 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //$this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $data = ServiceGroups::where(["active" => 1])->get();
-
         $about = TextPages::find(1)->where(['code'=>'about-us'])->get();
-
-//        $text = preg_replace('/(<\/p>).*/', '$1', $about[0]->description); // This is
-
         $text = explode('</p>',$about[0]->description); // This is
-
         $tmp = [$text[0],$text[1],$text[2]];
-
         $about_text = implode('</p>',$tmp);
-
-//        dd($text);
 
         return view('index',['services' => $data, 'about'=>$about_text]);
     }
@@ -65,10 +42,6 @@ class MainController extends Controller
     public function newsElement($code)
     {
         $data = News::where(['code'=>$code])->first();
- //       $prev = News::where(['id ', '>' , $data->id])->get();
-//        $next = News::where(['code'=>$code])->first();
-//
- //       dd($prev);
 
         return view('news.element',['news'=>$data]);
     }

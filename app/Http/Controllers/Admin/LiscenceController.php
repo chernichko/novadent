@@ -10,37 +10,22 @@ use Illuminate\Http\Request;
 
 class LiscenceController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $liscences = Liscence::all();
-
         return view('admin.liscence', ['liscence' => $liscences]);
     }
 
     public function save(Request $request)
     {
-
         if ($request->hasFile('file')) {
-
             Liscence::saveLiscence($request);
-
         }
-
         return redirect()->route('admin.liscence');
     }
 
@@ -49,11 +34,8 @@ class LiscenceController extends Controller
     public function delete(Request $request)
     {
         if ($data = $request->all()) {
-
             Liscence::delLiscence($data);
-
         }
-
         return redirect()->route('admin.liscence');
     }
 

@@ -34,12 +34,12 @@ class ArticleController extends Controller
     {
 
         $list_news = Article::all();
-        return view('admin.article.index',['listnews'=>$list_news]);
+        return view('admin.article.index', ['listnews' => $list_news]);
     }
 
     public function create(Request $request)
     {
-        if($request->isMethod('post')) {
+        if ($request->isMethod('post')) {
 
             Article::saveArticle($request);
 
@@ -58,15 +58,15 @@ class ArticleController extends Controller
         return redirect()->route('admin.article');
     }
 
-    public function edit(Request $request,$id)
+    public function edit(Request $request, $id)
     {
-        if($request->isMethod('post')) {
+        if ($request->isMethod('post')) {
 
             Article::saveArticle($request);
         }
 
-        $article = Article::where(['id'=>$id])->first();
+        $article = Article::where(['id' => $id])->first();
 
-        return view('admin.article.edit',['new'=>$article]);
+        return view('admin.article.edit', ['new' => $article]);
     }
 }

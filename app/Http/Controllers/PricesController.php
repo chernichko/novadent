@@ -9,21 +9,6 @@ use Illuminate\Http\Request;
 
 class PricesController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $prices_list = Prices::get();
@@ -33,6 +18,5 @@ class PricesController extends Controller
             'prices' => $prices_list,
             'services' => $services_list
         ]);
-
     }
 }

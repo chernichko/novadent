@@ -38,27 +38,10 @@ class AdminController extends Controller
     public function info(Request $request)
     {
         if($request->isMethod('post')){
-
-//            $file = $request->file('logotip');
-//            $upload_folder = 'public/files';
-//            $filename = $file->getClientOriginalName(); // image.jpg
-
-//            Storage::putFileAs($upload_folder, $file, $filename);
-
-//            $path = $request->file('logotip')->storeAs('files', 'logotip');
-
-//            dd($path);
-
             SiteInfo::saveInfo($request->all());
         }
 
         $info = SiteInfo::getSiteInfo();
-//        $data = SiteInfo::all();
-//
-//        $info = [];
-//        foreach ($data as $row){
-//            $info[$row->code] = $row->value;
-//        }
 
         return view('admin.info',['data' => $info]);
     }
@@ -71,9 +54,7 @@ class AdminController extends Controller
     public function newsCreate(Request $request)
     {
         if($request->isMethod('post')) {
-
             News::saveNews($request);
-
             return redirect()->route('admin.news');
         }
 
@@ -92,7 +73,6 @@ class AdminController extends Controller
     public function newsEdit(Request $request,$id)
     {
         if($request->isMethod('post')) {
-
             News::saveNews($request);
         }
 
@@ -110,9 +90,7 @@ class AdminController extends Controller
     public function serviceCreate(Request $request)
     {
         if($request->isMethod('post')) {
-
             ServiceGroups::saveGroup($request->all());
-
             return redirect()->route('admin.services');
         }
 
@@ -192,9 +170,7 @@ class AdminController extends Controller
     public function doctorCreate(Request $request)
     {
         if($request->isMethod('post')) {
-
             Doctors::saveDoctor($request);
-
             return redirect()->route('admin.doctors');
         }
 
@@ -204,9 +180,7 @@ class AdminController extends Controller
     public function doctorEdit(Request $request,$id)
     {
         if($request->isMethod('post')) {
-
             Doctors::saveDoctor($request);
-
         }
 
         $doctor = Doctors::where(['id'=>$id])->first();
