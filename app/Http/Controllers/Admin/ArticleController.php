@@ -32,7 +32,6 @@ class ArticleController extends Controller
      */
     public function index()
     {
-
         $list_news = Article::all();
         return view('admin.article.index', ['listnews' => $list_news]);
     }
@@ -40,7 +39,6 @@ class ArticleController extends Controller
     public function create(Request $request)
     {
         if ($request->isMethod('post')) {
-
             Article::saveArticle($request);
 
             return redirect()->route('admin.article');
@@ -61,7 +59,6 @@ class ArticleController extends Controller
     public function edit(Request $request, $id)
     {
         if ($request->isMethod('post')) {
-
             Article::saveArticle($request);
         }
 

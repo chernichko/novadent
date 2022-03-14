@@ -8,48 +8,44 @@ class Article extends Model
 {
     protected $table = 'articles';
 
-    protected $fillable = ['name','short_description','description','code','image','updated_at'];
+    protected $fillable = ['name', 'short_description', 'description', 'code', 'image', 'updated_at'];
 
     protected $hidden = ['created_at'];
 
-    public static function saveArticle($request){
-
+    public static function saveArticle($request)
+    {
         $data = $request->all();
 
-        $path='';
+        $path = '';
 
         if ($request->hasFile('preview')) {
             $file = $request->file('preview');
             $filename = $file->getClientOriginalName();
-
-            $filename = explode('.',$filename);
-
+            $filename = explode('.', $filename);
             $fileexp = array_pop($filename);
-
-            $filename = implode("." , $filename) . time() . '.' . $fileexp;
-
-//            dd($filename);
-
-            $path = $request->file('preview')->storeAs('public/files/article' , $filename);
+            $filename = implode(".", $filename) . time() . '.' . $fileexp;
+            $path = $request->file('preview')->storeAs('public/files/article', $filename);
         }
 
-        if(isset($data['id'])){
-            $article  = Article::findOrFail($data['id']);
-        }else{
+        if (isset($data['id'])) {
+            $article = Article::findOrFail($data['id']);
+        } else {
             $article = new Article();
         }
 
         $article->name = $data['name'];
         $article->code = $data['code'];
-        if(!empty($path))
+        if (!empty($path)) {
             $article->image = $filename;
+        }
 
-        if(isset($data['dltImg']))
+        if (isset($data['dltImg'])) {
             $article->image = '';
-//        $article = htmlspecialchars("<a href='test'>Test</a>", ENT_QUOTES);
+        }
+
         $article->description = htmlspecialchars($data['description']);
         $article->short_description = htmlspecialchars($data['short_description']);
-        $article->active = isset($data['active']) ? 1 : 0 ;
+        $article->active = isset($data['active']) ? 1 : 0;
 
         $article->save();
     }

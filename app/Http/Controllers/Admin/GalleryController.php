@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Reviews;
 use Illuminate\Http\Request;
 
-
 class GalleryController extends Controller
 {
     public function __construct()
@@ -28,7 +27,6 @@ class GalleryController extends Controller
         }
         return redirect()->route('admin.gallery');
     }
-
 
     public function delete(Request $request)
     {

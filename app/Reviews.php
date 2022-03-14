@@ -8,12 +8,12 @@ class Reviews extends Model
 {
     protected $table = 'reviews';
 
-    protected $fillable = ['name','phone','text','updated_at'];
+    protected $fillable = ['name', 'phone', 'text', 'updated_at'];
 
     protected $hidden = ['created_at'];
 
-    public static function saveReviewe($data){
-
+    public static function saveReviewe($data)
+    {
         $review = new Reviews;
 
         $review->name = $data['name'];

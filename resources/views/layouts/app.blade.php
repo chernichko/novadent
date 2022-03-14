@@ -25,7 +25,7 @@
             <div class="row desctop-header">
                 <div class="col-xs-12 col-md-3 header_logo">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="{{asset('storage/header_logo.png')}}">
+                        <img src="{{asset('files/header_logo.png')}}">
                     </a>
                 </div>
 
@@ -175,7 +175,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-3 my-4 footer_logo">
-                        <img src="{{asset('storage/footer_logo.png')}}">
+                        <img src="{{asset('files/footer_logo.png')}}">
 
                         <div class="licesne_number-footer">Лицензия ЛО-34-01-003973</div>
                     </div>

@@ -16,40 +16,41 @@ class MainController extends Controller
     public function index()
     {
         $data = ServiceGroups::where(["active" => 1])->get();
-        $about = TextPages::find(1)->where(['code'=>'about-us'])->get();
-        $text = explode('</p>',$about[0]->description); // This is
-        $tmp = [$text[0],$text[1],$text[2]];
-        $about_text = implode('</p>',$tmp);
+        //$about = TextPages::find(1)->where(['code'=>'about-us'])->get();
+        $about = '';
+        //$text = explode('</p>',$about[0]->description); // This is
+        //$tmp = [$text[0],$text[1],$text[2]];
+        //$about_text = implode('</p>',$tmp);
 
-        return view('index',['services' => $data, 'about'=>$about_text]);
+        return view('index', ['services' => $data, 'about' => '']);
     }
 
     public function about()
     {
-        $data = TextPages::where(['code'=>'about-us'])->first();
+        $data = TextPages::where(['code' => 'about-us'])->first();
         $doctors = Doctors::get();
         $liscences = Liscence::get();
 
-        return view('about',['data'=>$data,'doctors'=>$doctors,'liscences'=>$liscences]);
+        return view('about', ['data' => $data, 'doctors' => $doctors, 'liscences' => $liscences]);
     }
 
     public function news()
     {
         $data = News::where(['active' => 1])->get();
-        return view('news.index',['list'=>$data]);
+        return view('news.index', ['list' => $data]);
     }
 
     public function newsElement($code)
     {
-        $data = News::where(['code'=>$code])->first();
+        $data = News::where(['code' => $code])->first();
 
-        return view('news.element',['news'=>$data]);
+        return view('news.element', ['news' => $data]);
     }
 
     public function services()
     {
         $data = ServiceGroups::where(["active" => 1])->get();
-        return view('services.index',['services' => $data]);
+        return view('services.index', ['services' => $data]);
     }
 
     public function servicesElement($code)
@@ -57,7 +58,7 @@ class MainController extends Controller
         $data = ServiceGroups::where(["code" => $code])->first();
         $services_list = ServiceGroups::where(["active" => 1])->get();
 
-        return view('services.element',[
+        return view('services.element', [
             'service' => $data,
             'services_list' => $services_list
         ]);
@@ -69,10 +70,10 @@ class MainController extends Controller
 
         $info = [];
 
-        foreach ($data->toArray() as $item){
+        foreach ($data->toArray() as $item) {
             $info[$item['code']] = $item['value'];
         }
 
-        return view('contacts',['info'=>$info]);
+        return view('contacts', ['info' => $info]);
     }
 }

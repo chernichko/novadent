@@ -12,8 +12,8 @@ class MainInfo
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure $next
      * @return mixed
      */
     public function handle($request, Closure $next)
@@ -23,14 +23,14 @@ class MainInfo
 
         $info = [];
 
-        foreach ($data->toArray() as $item){
+        foreach ($data->toArray() as $item) {
             $info[$item['code']] = $item['value'];
         }
 
-        if(empty($info)){
-            $info=[
-                'phone'=>'',
-                'phone1'=>'',
+        if (empty($info)) {
+            $info = [
+                'phone' => '',
+                'phone1' => '',
             ];
         }
 

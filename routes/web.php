@@ -1,28 +1,9 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-
-Route::group(['prefix' => '/','middleware' => ['mainInfo']], function () {
-
+Route::group(['prefix' => '/', 'middleware' => ['mainInfo']], function () {
     Auth::routes();
     Route::get('/', 'MainController@index')->name('main');
 
-
-//Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/about-us', 'MainController@about')->name('about');
 
     Route::get('/news', 'MainController@news')->name('news');
@@ -41,77 +22,68 @@ Route::group(['prefix' => '/','middleware' => ['mainInfo']], function () {
     Route::post('/reviews/add', 'ReviewsController@add')->name('reviews.add');
 
     Route::get('/gallery', 'GalleryController@index')->name('gallery');
-
 });
-//Route::group(['prefix' => 'admin','namespace' => 'Admin'], function () {
-//    // Маршруты аутентификации...
-//    Route::get('/login', 'Auth\LoginController@showLoginForm');
-//    Route::post('/login', 'Auth\LoginController@login');
-//
-//    // Маршруты регистрации...
-////    Route::get('/register', 'Auth\AuthController@getRegister');
-////    Route::post('/register', 'Auth\AuthController@postRegister');
-//});
 
-Route::group(['prefix' => 'admin','namespace' => 'Admin', 'middleware' => ['auth','checkAdmin','infoToLayout']], function () {
+Route::group(
+    ['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'checkAdmin', 'infoToLayout']],
+    function () {
+        Route::get('/', 'AdminController@index')->name('admin');
+        Route::get('/info', 'AdminController@info')->name('admin.info');
+        Route::post('/info', 'AdminController@info')->name('admin.info.post');
 
-    Route::get('/', 'AdminController@index')->name('admin');
-    Route::get('/info', 'AdminController@info')->name('admin.info');
-    Route::post('/info', 'AdminController@info')->name('admin.info.post');
+        Route::get('/news', 'AdminController@news')->name('admin.news');
+        Route::get('/news/create', 'AdminController@newsCreate')->name('admin.news.create');
+        Route::post('/news/create', 'AdminController@newsCreate')->name('admin.news.create.post');
+        Route::get('/news/edit/{id}', 'AdminController@newsEdit');
+        Route::post('/news/edit/{id}', 'AdminController@newsEdit');
+        Route::get('/news/delete/{id}', 'AdminController@newsDelete');
 
-    Route::get('/news', 'AdminController@news')->name('admin.news');
-    Route::get('/news/create', 'AdminController@newsCreate')->name('admin.news.create');
-    Route::post('/news/create', 'AdminController@newsCreate')->name('admin.news.create.post');
-    Route::get('/news/edit/{id}', 'AdminController@newsEdit');
-    Route::post('/news/edit/{id}', 'AdminController@newsEdit');
-    Route::get('/news/delete/{id}', 'AdminController@newsDelete');
+        Route::get('/article', 'ArticleController@index')->name('admin.article');
+        Route::get('/article/create', 'ArticleController@create')->name('admin.article.create');
+        Route::post('/article/create', 'ArticleController@create')->name('admin.article.create.post');
+        Route::get('/article/edit/{id}', 'ArticleController@edit');
+        Route::post('/article/edit/{id}', 'ArticleController@edit');
+        Route::get('/article/delete/{id}', 'ArticleController@delete');
 
-    Route::get('/article', 'ArticleController@index')->name('admin.article');
-    Route::get('/article/create', 'ArticleController@create')->name('admin.article.create');
-    Route::post('/article/create', 'ArticleController@create')->name('admin.article.create.post');
-    Route::get('/article/edit/{id}', 'ArticleController@edit');
-    Route::post('/article/edit/{id}', 'ArticleController@edit');
-    Route::get('/article/delete/{id}', 'ArticleController@delete');
+        Route::get('/services', 'AdminController@services')->name('admin.services');
+        Route::get('/services/create', 'AdminController@serviceCreate')->name('admin.service.create');
+        Route::post('/services/create', 'AdminController@serviceCreate')->name('admin.service.create.post');
+        Route::get('/services/edit/{id}', 'AdminController@serviceEdit');
+        Route::post('/services/edit/{id}', 'AdminController@serviceEdit');
+        Route::get('/services/delete/{id}', 'AdminController@serviceDelete');
 
-    Route::get('/services', 'AdminController@services')->name('admin.services');
-    Route::get('/services/create', 'AdminController@serviceCreate')->name('admin.service.create');
-    Route::post('/services/create', 'AdminController@serviceCreate')->name('admin.service.create.post');
-    Route::get('/services/edit/{id}', 'AdminController@serviceEdit');
-    Route::post('/services/edit/{id}', 'AdminController@serviceEdit');
-    Route::get('/services/delete/{id}', 'AdminController@serviceDelete');
+        Route::get('/prices', 'PricesController@index')->name('admin.prices');
+        Route::post('/prices/save', 'PricesController@save')->name('admin.prices.post');
 
-    Route::get('/prices', 'PricesController@index')->name('admin.prices');
-    Route::post('/prices/save', 'PricesController@save')->name('admin.prices.post');
+        Route::get('/pages', 'AdminController@pages')->name('admin.pages');
+        Route::get('/pages/create', 'AdminController@pageCreate')->name('admin.pages.create');
+        Route::post('/pages/create', 'AdminController@pageCreate')->name('admin.pages.create.post');
+        Route::get('/pages/edit/{id}', 'AdminController@pageEdit');
+        Route::post('/pages/edit/{id}', 'AdminController@pageEdit');
+        Route::get('/pages/delete/{id}', 'AdminController@pageDelete');
 
-    Route::get('/pages', 'AdminController@pages')->name('admin.pages');
-    Route::get('/pages/create', 'AdminController@pageCreate')->name('admin.pages.create');
-    Route::post('/pages/create', 'AdminController@pageCreate')->name('admin.pages.create.post');
-    Route::get('/pages/edit/{id}', 'AdminController@pageEdit');
-    Route::post('/pages/edit/{id}', 'AdminController@pageEdit');
-    Route::get('/pages/delete/{id}', 'AdminController@pageDelete');
+        Route::get('/doctors', 'AdminController@doctors')->name('admin.doctors');
+        Route::get('/doctors/create', 'AdminController@doctorCreate')->name('admin.doctor.create');
+        Route::post('/doctors/create', 'AdminController@doctorCreate')->name('admin.doctor.create.post');
+        Route::get('/doctors/edit/{id}', 'AdminController@doctorEdit');
+        Route::post('/doctors/edit/{id}', 'AdminController@doctorEdit');
+        Route::get('/doctors/delete/{id}', 'AdminController@doctorDelete');
 
-    Route::get('/doctors', 'AdminController@doctors')->name('admin.doctors');
-    Route::get('/doctors/create', 'AdminController@doctorCreate')->name('admin.doctor.create');
-    Route::post('/doctors/create', 'AdminController@doctorCreate')->name('admin.doctor.create.post');
-    Route::get('/doctors/edit/{id}', 'AdminController@doctorEdit');
-    Route::post('/doctors/edit/{id}', 'AdminController@doctorEdit');
-    Route::get('/doctors/delete/{id}', 'AdminController@doctorDelete');
+        Route::get('/gallery', 'GalleryController@index')->name('admin.gallery');
+        Route::get('/gallery/save', 'GalleryController@save')->name('admin.gallery.save');
+        Route::post('/gallery/save', 'GalleryController@save')->name('admin.gallery.save.post');
+        Route::post('/gallery/delete', 'GalleryController@delete')->name('admin.gallery.delete.post');
 
-    Route::get('/gallery', 'GalleryController@index')->name('admin.gallery');
-    Route::get('/gallery/save', 'GalleryController@save')->name('admin.gallery.save');
-    Route::post('/gallery/save', 'GalleryController@save')->name('admin.gallery.save.post');
-    Route::post('/gallery/delete', 'GalleryController@delete')->name('admin.gallery.delete.post');
+        Route::get('/liscence', 'LiscenceController@index')->name('admin.liscence');
+        Route::get('/liscence/save', 'LiscenceController@save')->name('admin.liscence.save');
+        Route::post('/liscence/save', 'LiscenceController@save')->name('admin.liscence.save.post');
+        Route::post('/liscence/delete', 'LiscenceController@delete')->name('admin.liscence.delete.post');
 
-    Route::get('/liscence', 'LiscenceController@index')->name('admin.liscence');
-    Route::get('/liscence/save', 'LiscenceController@save')->name('admin.liscence.save');
-    Route::post('/liscence/save', 'LiscenceController@save')->name('admin.liscence.save.post');
-    Route::post('/liscence/delete', 'LiscenceController@delete')->name('admin.liscence.delete.post');
+        Route::get('/reviews', 'ReviewsController@index')->name('admin.reviews');
+        Route::post('/reviews/update', 'ReviewsController@update')->name('admin.reviews.update');
+        Route::get('/licenses', 'AdminController@licenses')->name('admin.licenses');
 
-    Route::get('/reviews', 'ReviewsController@index')->name('admin.reviews');
-    Route::post('/reviews/update', 'ReviewsController@update')->name('admin.reviews.update');
-    Route::get('/licenses', 'AdminController@licenses')->name('admin.licenses');
-
-    Route::get('/laravel-filemanager', '\UniSharp\LaravelFilemanager\Controllers\LfmController@show');
-    Route::post('/laravel-filemanager/upload', '\UniSharp\LaravelFilemanager\Controllers\UploadController@upload');
-
-});
+        Route::get('/laravel-filemanager', '\UniSharp\LaravelFilemanager\Controllers\LfmController@show');
+        Route::post('/laravel-filemanager/upload', '\UniSharp\LaravelFilemanager\Controllers\UploadController@upload');
+    }
+);

@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Reviews;
 use Illuminate\Http\Request;
 
-
 class ReviewsController extends Controller
 {
     public function __construct()

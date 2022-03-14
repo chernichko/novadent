@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Reviews;
 use Illuminate\Http\Request;
 
-
 class LiscenceController extends Controller
 {
     public function __construct()
@@ -29,8 +28,6 @@ class LiscenceController extends Controller
         return redirect()->route('admin.liscence');
     }
 
-
-
     public function delete(Request $request)
     {
         if ($data = $request->all()) {
@@ -38,5 +35,4 @@ class LiscenceController extends Controller
         }
         return redirect()->route('admin.liscence');
     }
-
 }

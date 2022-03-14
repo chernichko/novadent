@@ -8,7 +8,6 @@ use App\Reviews;
 use App\ServiceGroups;
 use Illuminate\Http\Request;
 
-
 class PricesController extends Controller
 {
     public function __construct()
@@ -21,26 +20,26 @@ class PricesController extends Controller
         $list_service = ServiceGroups::all();
         $prices = [];
 
-        foreach ($list_service as $group){
+        foreach ($list_service as $group) {
             $prices_tmp = Prices::where(['service_group_id' => $group['id']])->get();
             $prices[$group['id']] = $prices_tmp;
         }
 
-        return view('admin.prices',['services'=>$list_service, 'price'=>$prices]);
+        return view('admin.prices', ['services' => $list_service, 'price' => $prices]);
     }
 
     public function save(Request $request)
     {
-
-        if($request->isMethod('post')) {
+        if ($request->isMethod('post')) {
             $post = $request->all();
             $pod_services = \GuzzleHttp\json_decode($post['data']);
 
-            foreach ($pod_services as $item){
-                if(!empty($item->name) && !empty($item->price))
-                    Prices::savePrice($item,$post['service']);
-                else
+            foreach ($pod_services as $item) {
+                if (!empty($item->name) && !empty($item->price)) {
+                    Prices::savePrice($item, $post['service']);
+                } else {
                     Prices::deletePrice($item->id);
+                }
             }
         }
     }

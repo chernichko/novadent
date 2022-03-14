@@ -14,7 +14,7 @@ class PricesController extends Controller
         $prices_list = Prices::get();
         $services_list = ServiceGroups::where(["active" => 1])->get();
 
-        return view('prices',[
+        return view('prices', [
             'prices' => $prices_list,
             'services' => $services_list
         ]);

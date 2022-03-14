@@ -32,28 +32,30 @@ class AdminController extends Controller
      */
     public function index()
     {
+        dd('dd');
         return view('admin.index');
     }
 
     public function info(Request $request)
     {
-        if($request->isMethod('post')){
+        if ($request->isMethod('post')) {
             SiteInfo::saveInfo($request->all());
         }
 
         $info = SiteInfo::getSiteInfo();
 
-        return view('admin.info',['data' => $info]);
+        return view('admin.info', ['data' => $info]);
     }
+
     public function news()
     {
         $list_news = News::all();
-        return view('admin.news.index',['listnews'=>$list_news]);
+        return view('admin.news.index', ['listnews' => $list_news]);
     }
 
     public function newsCreate(Request $request)
     {
-        if($request->isMethod('post')) {
+        if ($request->isMethod('post')) {
             News::saveNews($request);
             return redirect()->route('admin.news');
         }
@@ -70,26 +72,26 @@ class AdminController extends Controller
         return redirect()->route('admin.news');
     }
 
-    public function newsEdit(Request $request,$id)
+    public function newsEdit(Request $request, $id)
     {
-        if($request->isMethod('post')) {
+        if ($request->isMethod('post')) {
             News::saveNews($request);
         }
 
-        $new = News::where(['id'=>$id])->first();
+        $new = News::where(['id' => $id])->first();
 
-        return view('admin.news.edit',['new'=>$new]);
+        return view('admin.news.edit', ['new' => $new]);
     }
 
     public function services()
     {
         $list_service = ServiceGroups::all();
-        return view('admin.services.index',['listService'=>$list_service]);
+        return view('admin.services.index', ['listService' => $list_service]);
     }
 
     public function serviceCreate(Request $request)
     {
-        if($request->isMethod('post')) {
+        if ($request->isMethod('post')) {
             ServiceGroups::saveGroup($request->all());
             return redirect()->route('admin.services');
         }
@@ -97,17 +99,15 @@ class AdminController extends Controller
         return view('admin.services.create');
     }
 
-    public function serviceEdit(Request $request,$id)
+    public function serviceEdit(Request $request, $id)
     {
-        if($request->isMethod('post')) {
-
+        if ($request->isMethod('post')) {
             ServiceGroups::saveGroup($request->all());
-
         }
 
-        $service = ServiceGroups::where(['id'=>$id])->first();
+        $service = ServiceGroups::where(['id' => $id])->first();
 
-        return view('admin.services.edit',['service'=>$service]);
+        return view('admin.services.edit', ['service' => $service]);
     }
 
     public function serviceDelete($id)
@@ -122,13 +122,12 @@ class AdminController extends Controller
     public function pages()
     {
         $list_pages = TextPages::all();
-        return view('admin.pages.index',['listPages'=>$list_pages]);
+        return view('admin.pages.index', ['listPages' => $list_pages]);
     }
 
     public function pageCreate(Request $request)
     {
-        if($request->isMethod('post')) {
-
+        if ($request->isMethod('post')) {
             $input = $request->except('_method', '_token');
 
             TextPages::savePage($input);
@@ -139,18 +138,17 @@ class AdminController extends Controller
         return view('admin.pages.create');
     }
 
-    public function pageEdit(Request $request,$id)
+    public function pageEdit(Request $request, $id)
     {
-        if($request->isMethod('post')) {
-
+        if ($request->isMethod('post')) {
             $input = $request->except('_method', '_token');
 
             TextPages::savePage($input);
         }
 
-        $page = TextPages::where(['id'=>$id])->first();
+        $page = TextPages::where(['id' => $id])->first();
 
-        return view('admin.pages.edit',['page'=>$page]);
+        return view('admin.pages.edit', ['page' => $page]);
     }
 
     public function pageDelete($id)
@@ -162,14 +160,15 @@ class AdminController extends Controller
         return redirect()->route('admin.pages');
     }
 
-    public function doctors(){
+    public function doctors()
+    {
         $list_doctors = Doctors::all();
-        return view('admin.doctors.index',['listDoctors'=>$list_doctors]);
+        return view('admin.doctors.index', ['listDoctors' => $list_doctors]);
     }
 
     public function doctorCreate(Request $request)
     {
-        if($request->isMethod('post')) {
+        if ($request->isMethod('post')) {
             Doctors::saveDoctor($request);
             return redirect()->route('admin.doctors');
         }
@@ -177,20 +176,20 @@ class AdminController extends Controller
         return view('admin.doctors.create');
     }
 
-    public function doctorEdit(Request $request,$id)
+    public function doctorEdit(Request $request, $id)
     {
-        if($request->isMethod('post')) {
+        if ($request->isMethod('post')) {
             Doctors::saveDoctor($request);
         }
 
-        $doctor = Doctors::where(['id'=>$id])->first();
+        $doctor = Doctors::where(['id' => $id])->first();
 
-        return view('admin.doctors.edit',['doctor'=>$doctor]);
+        return view('admin.doctors.edit', ['doctor' => $doctor]);
     }
 
-    public function feedback(){
+    public function feedback()
+    {
         return view('admin.feedback');
     }
-
 
 }

@@ -8,15 +8,23 @@ class ServiceGroups extends Model
 {
     protected $table = 'service_groups';
 
-    protected $fillable = ['name','code','short_description','description','meta_title','meta_description','updated_at'];
+    protected $fillable = [
+        'name',
+        'code',
+        'short_description',
+        'description',
+        'meta_title',
+        'meta_description',
+        'updated_at'
+    ];
 
     protected $hidden = ['created_at'];
 
-    public static function saveGroup($data){
-
-        if(isset($data['id'])){
-            $service  = ServiceGroups::findOrFail($data['id']);
-        }else{
+    public static function saveGroup($data)
+    {
+        if (isset($data['id'])) {
+            $service = ServiceGroups::findOrFail($data['id']);
+        } else {
             $service = new ServiceGroups;
         }
 
@@ -26,7 +34,7 @@ class ServiceGroups extends Model
         $service->description = $data['description'];
         $service->meta_title = $data['metatitle'];
         $service->meta_description = $data['metadescription'];
-        $service->active = isset($data['active']) ? 1 : 0 ;
+        $service->active = isset($data['active']) ? 1 : 0;
 
         $service->save();
     }
