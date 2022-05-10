@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use App\SiteInfo;
 use App\ServiceGroups;
-use View;
+use Illuminate\Support\Facades\View;
 
 class MainInfo
 {

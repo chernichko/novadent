@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use App\TextPages;
-use View;
+use Illuminate\Support\Facades\View;
 
 class InfoToLayout
 {
