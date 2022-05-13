@@ -4,9 +4,6 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-use Illuminate\Http\File;
-use Illuminate\Support\Facades\Storage;
-
 class News extends Model
 {
     protected $table = 'news';
@@ -24,13 +21,9 @@ class News extends Model
         if ($request->hasFile('preview')) {
             $file = $request->file('preview');
             $filename = $file->getClientOriginalName();
-
             $filename = explode('.', $filename);
-
             $fileexp = array_pop($filename);
-
             $filename = implode(".", $filename) . time() . '.' . $fileexp;
-
             $path = $request->file('preview')->storeAs('public/files/news', $filename);
         }
 

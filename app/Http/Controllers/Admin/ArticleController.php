@@ -3,44 +3,29 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\ServiceGroups;
-use App\SiteInfo;
-use App\TextPages;
+use App\Services\ArticleService;
 use App\Article;
-use App\Prices;
-use App\Doctors;
 use Illuminate\Http\Request;
-use Illuminate\Http\File;
-use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function index(ArticleService $articleService)
     {
-        $list_news = Article::all();
+//        $list_news = Article::all();
+        $list_news = $articleService->all();
         return view('admin.article.index', ['listnews' => $list_news]);
     }
 
-    public function create(Request $request)
+    public function create(Request $request, ArticleService $articleService)
     {
         if ($request->isMethod('post')) {
-            Article::saveArticle($request);
-
+//            Article::saveArticle($request);
+            $articleService->save($request);
             return redirect()->route('admin.article');
         }
 
