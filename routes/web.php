@@ -45,29 +45,29 @@ Route::group(
         Route::post('/article/edit/{id}', 'ArticleController@edit');
         Route::get('/article/delete/{id}', 'ArticleController@delete');
 
-        Route::get('/services', 'AdminController@services')->name('admin.services');
-        Route::get('/services/create', 'AdminController@serviceCreate')->name('admin.service.create');
-        Route::post('/services/create', 'AdminController@serviceCreate')->name('admin.service.create.post');
-        Route::get('/services/edit/{id}', 'AdminController@serviceEdit');
-        Route::post('/services/edit/{id}', 'AdminController@serviceEdit');
-        Route::get('/services/delete/{id}', 'AdminController@serviceDelete');
+        Route::get('/services', 'ServiceController@services')->name('admin.services');
+        Route::get('/services/create', 'ServiceController@serviceCreate')->name('admin.service.create');
+        Route::post('/services/create', 'ServiceController@serviceCreate')->name('admin.service.create.post');
+        Route::get('/services/edit/{id}', 'ServiceController@serviceEdit');
+        Route::post('/services/edit/{id}', 'ServiceController@serviceEdit');
+        Route::get('/services/delete/{id}', 'ServiceController@serviceDelete');
 
         Route::get('/prices', 'PricesController@index')->name('admin.prices');
         Route::post('/prices/save', 'PricesController@save')->name('admin.prices.post');
 
-        Route::get('/pages', 'AdminController@pages')->name('admin.pages');
-        Route::get('/pages/create', 'AdminController@pageCreate')->name('admin.pages.create');
-        Route::post('/pages/create', 'AdminController@pageCreate')->name('admin.pages.create.post');
-        Route::get('/pages/edit/{id}', 'AdminController@pageEdit');
-        Route::post('/pages/edit/{id}', 'AdminController@pageEdit');
-        Route::get('/pages/delete/{id}', 'AdminController@pageDelete');
+        Route::get('/pages', 'PageController@pages')->name('admin.pages');
+        Route::get('/pages/create', 'PageController@pageCreate')->name('admin.pages.create');
+        Route::post('/pages/create', 'PageController@pageCreate')->name('admin.pages.create.post');
+        Route::get('/pages/edit/{id}', 'PageController@pageEdit');
+        Route::post('/pages/edit/{id}', 'PageController@pageEdit');
+        Route::get('/pages/delete/{id}', 'PageController@pageDelete');
 
-        Route::get('/doctors', 'AdminController@doctors')->name('admin.doctors');
-        Route::get('/doctors/create', 'AdminController@doctorCreate')->name('admin.doctor.create');
-        Route::post('/doctors/create', 'AdminController@doctorCreate')->name('admin.doctor.create.post');
-        Route::get('/doctors/edit/{id}', 'AdminController@doctorEdit');
-        Route::post('/doctors/edit/{id}', 'AdminController@doctorEdit');
-        Route::get('/doctors/delete/{id}', 'AdminController@doctorDelete');
+        Route::get('/doctors', 'DoctorController@doctors')->name('admin.doctors');
+        Route::get('/doctors/create', 'DoctorController@doctorCreate')->name('admin.doctor.create');
+        Route::post('/doctors/create', 'DoctorController@doctorCreate')->name('admin.doctor.create.post');
+        Route::get('/doctors/edit/{id}', 'DoctorController@doctorEdit');
+        Route::post('/doctors/edit/{id}', 'DoctorController@doctorEdit');
+        Route::get('/doctors/delete/{id}', 'DoctorController@doctorDelete');
 
         Route::get('/gallery', 'GalleryController@index')->name('admin.gallery');
         Route::get('/gallery/save', 'GalleryController@save')->name('admin.gallery.save');
