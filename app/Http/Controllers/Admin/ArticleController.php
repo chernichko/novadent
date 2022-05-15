@@ -16,15 +16,13 @@ class ArticleController extends Controller
 
     public function index(ArticleService $articleService)
     {
-//        $list_news = Article::all();
-        $list_news = $articleService->all();
+        $list_news = Article::all();
         return view('admin.article.index', ['listnews' => $list_news]);
     }
 
     public function create(Request $request, ArticleService $articleService)
     {
         if ($request->isMethod('post')) {
-//            Article::saveArticle($request);
             $articleService->save($request);
             return redirect()->route('admin.article');
         }
@@ -41,13 +39,13 @@ class ArticleController extends Controller
         return redirect()->route('admin.article');
     }
 
-    public function edit(Request $request, $id)
+    public function edit(Request $request,ArticleService $articleService, $id)
     {
         if ($request->isMethod('post')) {
-            Article::saveArticle($request);
+            $article = $articleService->save($request);
+        }else{
+            $article = Article::find($id);
         }
-
-        $article = Article::where(['id' => $id])->first();
 
         return view('admin.article.edit', ['new' => $article]);
     }

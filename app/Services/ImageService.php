@@ -1,7 +1,7 @@
 <?php
 namespace App\Services;
 
-abstract class BaseServices{
+class ImageService{
 
     public function saveImage($imgPath,$request){
 

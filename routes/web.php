@@ -31,12 +31,12 @@ Route::group(
         Route::get('/info', 'AdminController@info')->name('admin.info');
         Route::post('/info', 'AdminController@info')->name('admin.info.post');
 
-        Route::get('/news', 'AdminController@news')->name('admin.news');
-        Route::get('/news/create', 'AdminController@newsCreate')->name('admin.news.create');
-        Route::post('/news/create', 'AdminController@newsCreate')->name('admin.news.create.post');
-        Route::get('/news/edit/{id}', 'AdminController@newsEdit');
-        Route::post('/news/edit/{id}', 'AdminController@newsEdit');
-        Route::get('/news/delete/{id}', 'AdminController@newsDelete');
+        Route::get('/news', 'NewsController@news')->name('admin.news');
+        Route::get('/news/create', 'NewsController@newsCreate')->name('admin.news.create');
+        Route::post('/news/create', 'NewsController@newsCreate')->name('admin.news.create.post');
+        Route::get('/news/edit/{id}', 'NewsController@newsEdit');
+        Route::post('/news/edit/{id}', 'NewsController@newsEdit');
+        Route::get('/news/delete/{id}', 'NewsController@newsDelete');
 
         Route::get('/article', 'ArticleController@index')->name('admin.article');
         Route::get('/article/create', 'ArticleController@create')->name('admin.article.create');

@@ -4,35 +4,22 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\ServiceGroups;
+use App\Services\NewsService;
 use App\SiteInfo;
 use App\TextPages;
 use App\News;
-use App\Prices;
 use App\Doctors;
 use Illuminate\Http\Request;
-use Illuminate\Http\File;
-use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        dd('dd');
         return view('admin.index');
     }
 
@@ -47,41 +34,7 @@ class AdminController extends Controller
         return view('admin.info', ['data' => $info]);
     }
 
-    public function news()
-    {
-        $list_news = News::all();
-        return view('admin.news.index', ['listnews' => $list_news]);
-    }
-
-    public function newsCreate(Request $request)
-    {
-        if ($request->isMethod('post')) {
-            News::saveNews($request);
-            return redirect()->route('admin.news');
-        }
-
-        return view('admin.news.create');
-    }
-
-    public function newsDelete($id)
-    {
-        $new = News::find($id);
-
-        $new->delete();
-
-        return redirect()->route('admin.news');
-    }
-
-    public function newsEdit(Request $request, $id)
-    {
-        if ($request->isMethod('post')) {
-            News::saveNews($request);
-        }
-
-        $new = News::where(['id' => $id])->first();
-
-        return view('admin.news.edit', ['new' => $new]);
-    }
+    //то что ниже расположить в свои файлы
 
     public function services()
     {
@@ -118,6 +71,8 @@ class AdminController extends Controller
 
         return redirect()->route('admin.services');
     }
+
+
 
     public function pages()
     {

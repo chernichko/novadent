@@ -2,13 +2,12 @@
 
 namespace App\Services;
 
-use App\Article;
+use App\News;
 use Illuminate\Http\Request;
 
-class ArticleService
+class NewsService
 {
-
-    protected $imgPath = 'public/files/article';
+    protected $imgPath = 'public/files/news';
     /**
      * @var ImageService
      */
@@ -21,36 +20,32 @@ class ArticleService
 
     public function save(Request $request)
     {
-
         $data = $request->all();
 
         if (isset($data['id'])) {
-            $article = Article::findOrFail($data['id']);
+            $news = News::findOrFail($data['id']);
         } else {
-            $article = new Article();
+            $news = new News();
         }
 
         if ($request->hasFile('preview')) {
             $file = $this->imageService->saveImage($this->imgPath, $request);
 
             if (!empty($file['path'])) {
-                $article->image = $file['filename'];
+                $news->image = $file['filename'];
             }
         }
 
         if (isset($data['dltImg'])) {
-            $article->image = '';
+            $news->image = '';
         }
+        $news->name = $data['name'];
+        $news->code = $data['code'];
+        $news->description = htmlspecialchars($data['description']);
+        $news->short_description = htmlspecialchars($data['short_description']);
+        $news->active = isset($data['active']) ? 1 : 0;
 
-        $article->name = $data['name'];
-        $article->code = $data['code'];
-        $article->description = htmlspecialchars($data['description']); //docum
-        $article->short_description = htmlspecialchars($data['short_description']);
-        $article->active = isset($data['active']) ? 1 : 0;
-
-        $article->save();
-
-        return $article;
+        $news->save();
+        return $news;
     }
-
 }
